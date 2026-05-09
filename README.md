@@ -1,2 +1,2 @@
 # workfriends-site
-Workfriends. The revenue network for creator commerce.
+Workfriends. The revenue network for creator commerce. 

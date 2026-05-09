@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workfriends. The revenue network for creator commerce.</title>
+<meta name="description" content="A boutique revenue network for creator commerce. Workfriends connects vetted Partners (Outlandish, Threecolts, Dubble, Sorilbran) to senior operators inside brands through warm Connectors and 1099 Sellers. Built by Kevin McClain: 18+ years inside the creator economy, $1.4B+ in acquisitions at Fullscreen, Tastemade, and Influential.">
+
+<link rel="canonical" href="https://getworkfriends.co/" />
+
+<meta property="og:title" content="Workfriends. The revenue network for creator commerce." />
+<meta property="og:description" content="A boutique revenue network of Partners, Connectors, and Sellers. All Upside. No Overhead. Built by Kevin McClain (Fullscreen, Tastemade, Influential)." />
+<meta property="og:url" content="https://getworkfriends.co/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Workfriends" />
+<meta property="og:locale" content="en_US" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Workfriends. The revenue network for creator commerce." />
+<meta name="twitter:description" content="A boutique revenue network of Partners, Connectors, and Sellers. All Upside. No Overhead." />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://getworkfriends.co/#organization",
+      "name": "Workfriends",
+      "url": "https://getworkfriends.co",
+      "email": "kevin@getworkfriends.co",
+      "slogan": "All Upside. No Overhead.",
+      "description": "A boutique revenue network for creator commerce. Workfriends is built on three aligned roles, Partners, Connectors, and Sellers, structured so the incentives compound across the table. Every Partner is vetted as a world-class operator before a Seller brings them a client.",
+      "foundingDate": "2026-01",
+      "founder": { "@id": "https://getworkfriends.co/#kevin-mcclain" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://getworkfriends.co/#kevin-mcclain",
+      "name": "Kevin McClain",
+      "jobTitle": "Founder",
+      "worksFor": { "@id": "https://getworkfriends.co/#organization" },
+      "alumniOf": [
+        { "@type": "Organization", "name": "Fullscreen" },
+        { "@type": "Organization", "name": "Tastemade" },
+        { "@type": "Organization", "name": "Influential" }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/kpmcclain/"
+      ],
+      "description": "Founder of Workfriends. 18+ years inside digital media and the creator economy, with inside exposure to $1.4B+ in acquisitions at Fullscreen (acquired by AT&T/Otter), Tastemade (acquired by Wonder), and Influential (acquired by Publicis)."
+    }
+  ]
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink: #0A0A0A;
+    --body: #1F1F1F;
+    --muted: #6B6B6B;
+    --soft: #9A9A9A;
+    --hairline: #E5E4DE;
+    --paper: #FAFAF7;
+    --block: #F2F1EC;
+    --accent: #0D5F4F;
+    --accent-soft: #9FE1CB;
+    --accent-wash: #D6E8E3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--paper);
+    color: var(--body);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "ss01" on, "cv11" on;
+  }
+
+  .mono { font-family: 'JetBrains Mono', monospace; letter-spacing: -0.02em; }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(250, 250, 247, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  nav.scrolled { border-bottom-color: var(--hairline); }
+
+  .logo {
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .logo .dot { color: var(--accent); }
+
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-cta {
+    padding: 9px 16px;
+    background: var(--ink);
+    color: var(--paper) !important;
+    border-radius: 6px;
+    font-size: 13px !important;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .nav-cta:hover { background: var(--accent); }
+
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  .hero { padding: 160px 0 120px; }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  h1 {
+    font-size: clamp(52px, 8vw, 108px);
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+    max-width: 1040px;
+    margin-bottom: 36px;
+  }
+  h1 .accent { color: var(--accent); }
+
+  .hero-promise {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .hero-sub {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--body);
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+  .hero-sub strong { color: var(--ink); font-weight: 600; }
+
+  .judgment-block {
+    margin-top: 80px;
+    padding-top: 48px;
+    border-top: 1px solid var(--hairline);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 48px;
+    align-items: start;
+    max-width: 1040px;
+  }
+  .judgment-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    white-space: nowrap;
+    padding-top: 6px;
+  }
+  .judgment-body { display: flex; flex-direction: column; gap: 28px; }
+  .judgment-text {
+    font-size: clamp(20px, 2.2vw, 26px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .judgment-text .accent { color: var(--accent); font-weight: 600; }
+  .judgment-text strong { font-weight: 600; color: var(--ink); }
+  .judgment-mission {
+    font-size: clamp(17px, 1.8vw, 21px);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  .judgment-mission .accent { color: var(--accent); font-weight: 600; }
+
+  .btn {
+    padding: 14px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.15s;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    letter-spacing: -0.01em;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent); }
+  .arrow { display: inline-block; transition: transform 0.15s; }
+  .btn:hover .arrow { transform: translateX(2px); }
+
+  section.block { padding: 100px 0; }
+  .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--ink);
+    max-width: 820px;
+  }
+  h2 .accent { color: var(--accent); }
+
+  .sec-head { margin-bottom: 56px; }
+  .sec-intro {
+    font-size: 18px;
+    color: var(--body);
+    max-width: 680px;
+    margin-top: 20px;
+    line-height: 1.55;
+  }
+
+  .brand-section { background: var(--accent-wash); }
+  .brand-content { max-width: 860px; margin: 0 auto; }
+  .brand-headline {
+    font-size: clamp(34px, 4.2vw, 52px);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    color: var(--ink);
+    margin-top: 14px;
+    margin-bottom: 28px;
+  }
+  .brand-headline .segment { display: inline-block; margin-right: 0.2em; }
+  .brand-headline .segment.last { color: var(--accent); }
+  .brand-body {
+    font-size: clamp(17px, 1.6vw, 20px);
+    font-weight: 400;
+    letter-spacing: -0.012em;
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 720px;
+  }
+  .brand-body strong { font-weight: 600; color: var(--ink); }
+  .brand-body-emphasis {
+    margin-top: 20px;
+    font-size: clamp(16px, 1.45vw, 18px);
+    color: rgba(10, 10, 10, 0.78);
+    font-style: italic;
+    max-width: 680px;
+  }
+  .brand-closer {
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(13, 95, 79, 0.25);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .roles-section { background: var(--block); }
+  .roles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    margin-top: 48px;
+  }
+  .role-card {
+    background: var(--paper);
+    padding: 44px 32px 36px;
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+  }
+  .role-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+  .role-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    padding: 4px 10px;
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+    margin-bottom: 24px;
+    align-self: flex-start;
+  }
+  .role-title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .role-body {
+    font-size: 15px;
+    color: var(--body);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+  .role-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 18px;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.15s;
+    align-self: flex-start;
+  }
+  .role-cta:hover { transform: translateY(-1px); background: var(--accent); }
+
+  .role-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 18px;
+    background: var(--block);
+    color: var(--muted);
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    align-self: flex-start;
+    cursor: default;
+  }
+  .role-status::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: var(--muted);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .role-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--hairline);
+    letter-spacing: -0.01em;
+  }
+  .role-softcta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    transition: gap 0.15s;
+  }
+  .role-softcta:hover { gap: 10px; }
+
+  .partners-strip {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--hairline);
+  }
+  .partners-strip-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .partner-item { display: flex; flex-direction: column; gap: 4px; }
+  .partner-capability {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .partner-name {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .partners-footnote {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hairline);
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+  }
+
+  .flywheel-section { background: var(--ink); color: var(--paper); }
+  .flywheel-section h2 { color: var(--paper); }
+  .flywheel-section h2 .accent { color: var(--accent-soft); }
+  .flywheel-section .label { color: var(--accent-soft); }
+  .flywheel-section .sec-intro { color: rgba(250, 250, 247, 0.78); }
+  .flywheel-principles {
+    margin-top: 48px;
+    padding: 40px 32px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.02);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .flywheel-principle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-soft);
+    margin-bottom: 10px;
+  }
+  .flywheel-statement {
+    font-size: 17px;
+    color: var(--paper);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+  }
+  .flywheel-statement .soft { color: rgba(250, 250, 247, 0.7); font-weight: 400; }
+
+  .founder-section { padding: 100px 0; }
+  .founder-strip {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: end;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .founder-line {
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1.3;
+    max-width: 760px;
+  }
+  .founder-line .accent { color: var(--accent); }
+  .founder-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .founder-link:hover { color: var(--accent); }
+
+  .proof-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    padding-top: 40px;
+  }
+  .proof-number {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .proof-label { font-size: 13px; color: var(--muted); line-height: 1.4; }
+
+  .cta-block { background: var(--accent); color: var(--paper); padding: 100px 0; }
+  .cta-block h2 {
+    color: var(--paper);
+    max-width: 900px;
+    font-size: clamp(40px, 5.5vw, 72px);
+  }
+  .cta-block .label { color: rgba(255,255,255,0.7); }
+  .cta-block .sec-intro { color: rgba(255,255,255,0.85); }
+  .cta-block .btn-primary {
+    background: var(--paper);
+    color: var(--ink);
+    margin-top: 28px;
+  }
+  .cta-block .btn-primary:hover { background: var(--accent-soft); }
+
+  footer {
+    background: var(--paper);
+    border-top: 1px solid var(--hairline);
+    padding: 40px 0 28px;
+  }
+  .footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-brand {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .footer-brand .dot { color: var(--accent); }
+  .footer-brand .slogan {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-left: 12px;
+  }
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+  }
+  .footer-links a { color: var(--muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--ink); }
+
+  @media (max-width: 860px) {
+    nav { padding: 14px 20px; }
+    .nav-links { gap: 14px; }
+    .container, .footer-inner { padding-left: 20px; padding-right: 20px; }
+    .hero { padding: 120px 0 70px; }
+    section.block { padding: 70px 0; }
+    .founder-section { padding: 70px 0; }
+    .cta-block { padding: 70px 0; }
+    .roles-grid { grid-template-columns: 1fr; }
+    .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .partners-strip { margin-top: 40px; padding-top: 32px; }
+    .role-card { min-height: auto; }
+    .judgment-block { grid-template-columns: 1fr; gap: 16px; margin-top: 48px; padding-top: 32px; }
+    .flywheel-principles { grid-template-columns: 1fr; gap: 24px; padding: 28px 24px; }
+    .founder-strip { grid-template-columns: 1fr; gap: 20px; align-items: start; }
+    .proof-row { grid-template-columns: 1fr; gap: 20px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="logo">Workfriends<span class="dot">.</span></a>
+  <div class="nav-links">
+    <a href="mailto:kevin@getworkfriends.co" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">A Boutique Revenue Network · Est. 2026</div>
+    <h1>The revenue network<br>for <span class="accent">creator commerce.</span></h1>
+    <div class="hero-promise">All Upside. No Overhead.</div>
+    <p class="hero-sub">
+      A network of <strong>Partners, Connectors, and Sellers</strong> helping senior operators inside brands find new revenue, tap proven expertise built inside billion-dollar brands, and connect with vetted operators in creator commerce. Aligned with revenue, not retainer.
+    </p>
+
+    <div class="judgment-block">
+      <div class="judgment-label">/ The judgment</div>
+      <div class="judgment-body">
+        <div class="judgment-text">
+          I spent a decade inside the creator economy, operating at <strong>Fullscreen, Tastemade, and Influential</strong> through their growth and acquisition chapters. I watched vendors pitch brilliantly and deliver poorly. I know the difference. <span class="accent">Workfriends exists so Sellers never have to guess.</span> Every Partner is vetted as a world-class operator before a Seller brings them a valuable, trusted client.
+        </div>
+        <div class="judgment-mission">
+          I built what I wish existed: <span class="accent">optionality for senior operators outside a W-2, and the relationships and reputation founder-led businesses need to compete with incumbents.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block roles-section" id="roles">
+  <div class="container">
+    <div class="sec-head">
+      <div class="label">/ The network</div>
+      <h2>Three roles. <span class="accent">One aligned outcome.</span></h2>
+      <p class="sec-intro">When a brand needs help, Workfriends matches them to the right vetted operator in our network. Every role plays a specific part. Every agreement is structured so that when the brand wins, everyone at the table wins. The network gets stronger with every partnership that lands.</p>
+    </div>
+
+    <div class="roles-grid">
+      <div class="role-card">
+        <div class="role-num">01</div>
+        <span class="role-tag">Partners</span>
+        <div class="role-title">Vetted operators who deliver.</div>
+        <div class="role-body">Operators with real infrastructure, real revenue, and a track record. You run the business. Workfriends brings qualified demand and the network that closes it. Aligned economics, in writing.</div>
+        <span class="role-status">Partner roster: at capacity</span>
+        <div class="role-note">Always open to meeting world-class operators and learning about your business. The current roster is deep enough to serve the deal flow we're closing. When that changes, relationships already in motion move to the front.</div>
+        <a href="mailto:kevin@getworkfriends.co?subject=Introduction%20from%20a%20future%20Partner" class="role-softcta">Introduce yourself <span class="arrow">&rarr;</span></a>
+      </div>
+
+      <div class="role-card">
+        <div class="role-num">02</div>
+        <span class="role-tag">Connectors</span>
+        <div class="role-title">Warm intros. Months saved.</div>
+        <div class="role-body">Senior operators with senior relationships. One warm introduction to the right decision-maker at a large brand can save months of cold outreach. No selling. No closing. Just opening the door.</div>
+        <a href="mailto:kevin@getworkfriends.co?subject=Connector%20Inquiry" class="role-cta">Become a Connector <span class="arrow">&rarr;</span></a>
+      </div>
+
+      <div class="role-card">
+        <div class="role-num">03</div>
+        <span class="role-tag">Sellers</span>
+        <div class="role-title">Carried to close.</div>
+        <div class="role-body">The most seller-friendly agreement in the creator economy. Two-tier commissions that grow with volume. Commissions follow the money. As long as Workfriends earns on a deal, you earn on it. No exclusivity. Keep your other work.</div>
+        <a href="mailto:kevin@getworkfriends.co?subject=Seller%20Inquiry" class="role-cta">Become a Seller <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+
+    <div class="partners-strip">
+      <div class="partners-strip-label">/ Current network: creator commerce Partners</div>
+      <div class="partners-grid">
+        <div class="partner-item">
+          <div class="partner-capability">TikTok Shop / Live</div>
+          <div class="partner-name">Outlandish</div>
+        </div>
+        <div class="partner-item">
+          <div class="partner-capability">Revenue recovery</div>
+          <div class="partner-name">Threecolts</div>
+        </div>
+        <div class="partner-item">
+          <div class="partner-capability">Clipping</div>
+          <div class="partner-name">Dubble</div>
+        </div>
+        <div class="partner-item">
+          <div class="partner-capability">AI positioning</div>
+          <div class="partner-name">Sorilbran</div>
+        </div>
+      </div>
+      <div class="partners-footnote">Plus social commerce events and additional vetted operators.</div>
+    </div>
+  </div>
+</section>
+
+<section class="block brand-section" id="brand">
+  <div class="container">
+    <div class="brand-content">
+      <div class="label">/ For the brand operators we work with</div>
+      <h2 class="brand-headline">
+        <span class="segment">Strategic thinking.</span>
+        <span class="segment">Vetted opportunities.</span>
+        <span class="segment last">Friends in the network.</span>
+      </h2>
+      <p class="brand-body">
+        Workfriends exists to help senior operators inside brands look good. We bring <strong>strategic thinking</strong> and <strong>vetted opportunities</strong> because it's the right thing to do to help your business grow. Every Partner in the network is someone we'd personally vouch for. Every opportunity we bring you is one we'd take ourselves.
+      </p>
+      <p class="brand-body brand-body-emphasis">
+        The access, reputation, and credibility senior operators earned over decades. Every opportunity we bring you carries that weight.
+      </p>
+      <div class="brand-closer">Nobody eats unless you win.</div>
+    </div>
+  </div>
+</section>
+
+<section class="block flywheel-section" id="flywheel">
+  <div class="container">
+    <div class="sec-head">
+      <div class="label">/ How it compounds</div>
+      <h2>Every closed partnership makes the <span class="accent">network stronger.</span></h2>
+      <p class="sec-intro">Every engagement produces three things: revenue on the books, a case study for the next pitch, and a process improvement that makes the next partnership faster. Each closed partnership strengthens the network for everyone already in it. We don't sell. We attract.</p>
+    </div>
+
+    <div class="flywheel-principles">
+      <div>
+        <div class="flywheel-principle">/ Aligned</div>
+        <div class="flywheel-statement">The brand wins. The Partner wins. Workfriends wins. <span class="soft">Three-way win-win-win. Nobody eats unless the client wins.</span></div>
+      </div>
+      <div>
+        <div class="flywheel-principle">/ Magnetic</div>
+        <div class="flywheel-statement">The network attracts what it needs. <span class="soft">Word of mouth, not outbound. The economics of every contract do the selling.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="founder-section">
+  <div class="container">
+    <div class="founder-strip">
+      <div class="founder-line">
+        Built by Kevin McClain. <span class="accent">18 years</span> inside digital media and the creator economy, with inside exposure to <span class="accent">$1.4B+</span> in acquisitions at Fullscreen, Tastemade, and Influential.
+      </div>
+      <a href="https://www.linkedin.com/in/kpmcclain/" class="founder-link">LinkedIn &rarr;</a>
+    </div>
+    <div class="proof-row">
+      <div class="proof-item">
+        <div class="proof-number">$2B+</div>
+        <div class="proof-label">Revenue driven and recovered across the Partner network</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-number">$1.4B+</div>
+        <div class="proof-label">In acquisitions lived inside: Fullscreen, Tastemade, Influential</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-number">Growth &rarr; Fortune 500</div>
+        <div class="proof-label">Active across mid-size and large global brands</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-block">
+  <div class="container">
+    <div class="label">/ Start</div>
+    <h2>All Upside. No Overhead.</h2>
+    <p class="sec-intro">Word of mouth brought you here. The economics will keep you. One 30-minute conversation to see if there's a fit.</p>
+    <a href="mailto:kevin@getworkfriends.co" class="btn btn-primary">Email Kevin directly <span class="arrow">&rarr;</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <span class="footer-brand">Workfriends<span class="dot">.</span></span>
+      <span class="slogan">All Upside. No Overhead.</span>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:kevin@getworkfriends.co">kevin@getworkfriends.co</a>
+      <a href="https://www.linkedin.com/in/kpmcclain/">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  });
+</script>
+
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Workfriends. The revenue network for creator commerce.</title>
-<meta name="description" content="A boutique revenue network for creator commerce. Workfriends connects vetted Partners (Outlandish, Threecolts, Dubble, Sorilbran, CreatorIQ Connect, Social Commerce Festival, Trenz.ai) to senior operators inside brands through warm Connectors and 1099 Sellers. Built by Kevin McClain: 18+ years inside the creator economy, $1.4B+ in acquisitions at Fullscreen, Tastemade, and Influential.">
+<meta name="description" content="A boutique revenue network for creator commerce. Workfriends connects vetted Partners (Outlandish, Threecolts, Dubble, Sorilbran, CreatorIQ Connect, Social Commerce Festival) to senior operators inside brands through warm Connectors and 1099 Sellers. Built by Kevin McClain: 18+ years inside the creator economy, $1.4B+ in acquisitions at Fullscreen, Tastemade, and Influential.">
 
 <link rel="canonical" href="https://getworkfriends.co/" />
 
@@ -123,7 +123,7 @@
 
   .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
 
-  .hero { padding: 160px 0 120px; }
+  .hero { padding: 160px 0 56px; }
 
   .eyebrow {
     font-family: 'JetBrains Mono', monospace;
@@ -175,11 +175,8 @@
     margin-top: 80px;
     padding-top: 48px;
     border-top: 1px solid var(--hairline);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 48px;
-    align-items: start;
-    max-width: 1040px;
+    display: block;
+    max-width: 820px;
   }
   .judgment-label {
     font-family: 'JetBrains Mono', monospace;
@@ -187,10 +184,9 @@
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--accent);
-    white-space: nowrap;
-    padding-top: 6px;
+    margin-bottom: 20px;
   }
-  .judgment-body { display: flex; flex-direction: column; gap: 28px; }
+  .judgment-body { display: flex; flex-direction: column; gap: 16px; }
   .judgment-text {
     font-size: clamp(20px, 2.2vw, 26px);
     font-weight: 500;
@@ -201,6 +197,7 @@
   .judgment-text .accent { color: var(--accent); font-weight: 600; }
   .judgment-text strong { font-weight: 600; color: var(--ink); }
   .judgment-mission {
+    margin-top: 16px;
     font-size: clamp(17px, 1.8vw, 21px);
     font-weight: 400;
     letter-spacing: -0.015em;
@@ -485,32 +482,32 @@
   }
   .flywheel-statement .soft { color: rgba(250, 250, 247, 0.7); font-weight: 400; }
 
-  .founder-section { padding: 100px 0; }
+  .founder-section { padding: 100px 0; background: var(--ink); color: var(--paper); }
   .founder-strip {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 48px;
     align-items: end;
     padding-bottom: 40px;
-    border-bottom: 1px solid var(--hairline);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
   }
   .founder-line {
     font-size: clamp(20px, 2.5vw, 28px);
     font-weight: 600;
     letter-spacing: -0.02em;
-    color: var(--ink);
+    color: var(--paper);
     line-height: 1.3;
     max-width: 760px;
   }
-  .founder-line .accent { color: var(--accent); }
+  .founder-line .accent { color: var(--accent-soft); }
   .founder-link {
     font-family: 'JetBrains Mono', monospace;
     font-size: 13px;
-    color: var(--muted);
+    color: rgba(250,250,247,0.55);
     text-decoration: none;
     white-space: nowrap;
   }
-  .founder-link:hover { color: var(--accent); }
+  .founder-link:hover { color: var(--accent-soft); }
 
   .proof-row {
     display: grid;
@@ -522,11 +519,11 @@
     font-size: 32px;
     font-weight: 700;
     letter-spacing: -0.03em;
-    color: var(--ink);
+    color: var(--paper);
     line-height: 1;
     margin-bottom: 8px;
   }
-  .proof-label { font-size: 13px; color: var(--muted); line-height: 1.4; }
+  .proof-label { font-size: 13px; color: rgba(250,250,247,0.55); line-height: 1.4; }
 
   .cta-block { background: var(--accent); color: var(--paper); padding: 100px 0; }
   .cta-block h2 {
@@ -585,7 +582,7 @@
     nav { padding: 14px 20px; }
     .nav-links { gap: 14px; }
     .container, .footer-inner { padding-left: 20px; padding-right: 20px; }
-    .hero { padding: 120px 0 70px; }
+    .hero { padding: 120px 0 40px; }
     section.block { padding: 70px 0; }
     .founder-section { padding: 70px 0; }
     .cta-block { padding: 70px 0; }
@@ -637,6 +634,7 @@
         The access, reputation, and credibility senior operators earned over decades. Every opportunity we bring you carries that weight.
       </p>
       <div class="brand-closer">We're paid on your growth, not a retainer.</div>
+      <a href="mailto:kevin@getworkfriends.co?subject=A%20revenue%20problem%20to%20solve" class="btn btn-primary" style="margin-top:28px;">Bring us a revenue problem <span class="arrow">&rarr;</span></a>
     </div>
   </div>
 </section>
@@ -659,17 +657,13 @@
           <div class="partner-name">Dubble</div>
         </div>
         <div class="partner-item">
-          <div class="partner-capability">AI positioning</div>
+          <div class="partner-capability">AI visibility</div>
           <div class="partner-name">Sorilbran</div>
         </div>
         <div class="partner-item">
           <div class="partner-capability">Event sponsorships</div>
           <div class="partner-name">CreatorIQ Connect</div>
           <div class="partner-name">Social Commerce Festival</div>
-        </div>
-        <div class="partner-item">
-          <div class="partner-capability">Category intelligence</div>
-          <div class="partner-name">Trenz.ai</div>
         </div>
       </div>
       <div class="partners-footnote">Plus additional vetted operators across the network.</div>
@@ -683,32 +677,14 @@
       <div class="judgment-label">/ The judgment</div>
       <div class="judgment-body">
         <div class="judgment-text">
-          I spent a decade inside the creator economy, operating at <strong>Fullscreen, Tastemade, and Influential</strong> through their growth and acquisition chapters. I watched vendors pitch brilliantly and deliver poorly. I know the difference. <span class="accent">Workfriends exists to cut through the noise.</span> No AI cold emails. No asking an operator for their time before doing the deep research. No treating every brand as the prospect who pays the bills. We work with the best CEOs and founders who have leapfrogged incumbents but don't yet carry the relationships and trust of tenured professionals.
+          I've spent 18 years in digital media, the last ten at the epicenter of the creator economy, operating at <strong>Fullscreen, Tastemade, and Influential</strong> through their growth and acquisition chapters. I watched vendors pitch brilliantly and deliver poorly. I know the difference. <span class="accent">Workfriends exists to cut through the noise.</span> No AI cold emails. No asking a brand client whose time is already stretched to take a meeting before we've done the deep research. No treating every brand as the prospect who pays the bills.
+        </div>
+        <div class="judgment-text">
+          <span class="accent">We come with market intelligence and a path to growth, not a generic pitch.</span> We work with the best CEOs and founders who have leapfrogged incumbents in their products, services, and capabilities but don't yet carry the relationships and trust of tenured professionals.
         </div>
         <div class="judgment-mission">
-          I built what I wish existed: <span class="accent">optionality for senior operators across the industry to drive growth, and a way to bring the friends inside brands the best partners, the ones that make them look like heroes.</span>
+          I built what I wish existed: <span class="accent">optionality for senior operators to grow on their own terms, and the relationships that make our friends inside brands look like heroes.</span>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block flywheel-section" id="flywheel">
-  <div class="container">
-    <div class="sec-head">
-      <div class="label">/ How it compounds</div>
-      <h2>Every closed partnership makes the <span class="accent">network stronger.</span></h2>
-      <p class="sec-intro">Every engagement produces three things: revenue on the books, a case study for the next pitch, and a process improvement that makes the next partnership faster. Each closed partnership strengthens the network for everyone already in it. We don't sell. We attract.</p>
-    </div>
-
-    <div class="flywheel-principles">
-      <div>
-        <div class="flywheel-principle">/ Aligned</div>
-        <div class="flywheel-statement">The brand wins. The Partner wins. Workfriends wins. <span class="soft">Three-way win-win-win. Nobody earns unless the client wins.</span></div>
-      </div>
-      <div>
-        <div class="flywheel-principle">/ Magnetic</div>
-        <div class="flywheel-statement">The network attracts what it needs. <span class="soft">Word of mouth, not outbound. The economics of every contract do the selling.</span></div>
       </div>
     </div>
   </div>
@@ -768,10 +744,10 @@
 
       <div class="role-card">
         <div class="role-num">03</div>
-        <span class="role-tag">Sellers</span>
-        <div class="role-title">Carried to close.</div>
-        <div class="role-body">The most seller-friendly agreement in the creator economy. Two-tier commissions that grow with volume. Commissions follow the money. As long as Workfriends earns on a deal, you earn on it. No exclusivity. Keep your other work.</div>
-        <a href="mailto:kevin@getworkfriends.co?subject=Seller%20Inquiry" class="role-cta">Become a Seller <span class="arrow">&rarr;</span></a>
+        <span class="role-tag">Strategic Advisors</span>
+        <div class="role-title">Senior operators in the room.</div>
+        <div class="role-body">VP, SVP, and C-suite operators who have built and scaled inside major brands, now embedded in the partner-to-brand process. They bring the judgment, relationships, and pattern recognition that only come from years of operating at the top. For them, it's a way to put that experience to work on their own terms and earn outside a W-2.</div>
+        <a href="mailto:kevin@getworkfriends.co?subject=Strategic%20Advisor%20Inquiry" class="role-cta">Become an advisor <span class="arrow">&rarr;</span></a>
       </div>
     </div>
   </div>

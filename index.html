@@ -113,7 +113,16 @@
   }
   .logo .dot { color: var(--accent); }
 
-  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-link {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--body);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .nav-link:hover { color: var(--accent); }
   .nav-cta {
     padding: 9px 16px;
     background: var(--ink);
@@ -308,6 +317,53 @@
     font-weight: 500;
   }
 
+  .sprints-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    margin-top: 48px;
+  }
+  .sprint-card {
+    background: var(--paper);
+    padding: 36px 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  .sprint-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .sprint-title {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .sprint-body {
+    font-size: 15px;
+    color: var(--body);
+    line-height: 1.6;
+  }
+  .sprints-closer {
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid var(--hairline);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
   .roles-section { background: var(--block); }
   .roles-grid {
     display: grid;
@@ -435,7 +491,7 @@
   }
   .partners-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 32px;
   }
   .partner-item { display: flex; flex-direction: column; gap: 4px; }
@@ -591,6 +647,10 @@
   .footer-links a { color: var(--muted); text-decoration: none; }
   .footer-links a:hover { color: var(--ink); }
 
+  @media (max-width: 1080px) {
+    .partners-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
   @media (max-width: 860px) {
     nav { padding: 14px 20px; }
     .nav-links { gap: 14px; }
@@ -600,6 +660,8 @@
     .founder-section { padding: 70px 0; }
     .cta-block { padding: 70px 0; }
     .roles-grid { grid-template-columns: 1fr; }
+    .sprints-grid { grid-template-columns: 1fr; }
+    .sprint-card { padding: 30px 24px; }
     .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .partners-strip { margin-top: 40px; padding-top: 32px; }
     .role-card { min-height: auto; }
@@ -609,6 +671,10 @@
     .proof-row { grid-template-columns: 1fr; gap: 20px; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
   }
+
+  @media (max-width: 560px) {
+    .nav-link { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -616,6 +682,7 @@
 <nav id="nav">
   <a href="#" class="logo">Workfriends<span class="dot">.</span></a>
   <div class="nav-links">
+    <a href="#sprints" class="nav-link">Commercial Sprints</a>
     <a href="mailto:kevin@getworkfriends.co" class="nav-cta">Get in touch</a>
   </div>
 </nav>
@@ -626,7 +693,7 @@
     <h1>The revenue network<br>for <span class="accent">creator commerce.</span></h1>
     <div class="hero-promise">All Upside. No Overhead.</div>
     <p class="hero-sub">
-      Senior operators inside brands find <strong>new revenue</strong>, tap proven expertise built inside billion-dollar brands, and connect with vetted operators in creator commerce. Aligned with revenue, not retainer.
+      Senior operators inside brands find <strong>new revenue</strong>, tap proven expertise built inside billion-dollar brands, and connect with vetted operators in creator commerce. Commercial leverage, without permanent overhead.
     </p>
   </div>
 </section>
@@ -646,9 +713,48 @@
       <p class="brand-body brand-body-emphasis">
         The access, reputation, and credibility senior operators earned over decades. Every opportunity we bring you carries that weight.
       </p>
-      <div class="brand-closer">We're paid on your growth, not a retainer.</div>
+      <div class="brand-closer">We work across the path to revenue, from identifying the opportunity to creating the relationships that move it forward.</div>
       <a href="mailto:kevin@getworkfriends.co?subject=A%20revenue%20problem%20to%20solve" class="btn btn-primary" style="margin-top:28px;">Bring us a revenue problem <span class="arrow">&rarr;</span></a>
     </div>
+  </div>
+</section>
+
+<section class="block" id="sprints">
+  <div class="container">
+    <div class="sec-head">
+      <div class="label">/ Commercial Sprints</div>
+      <h2>Put Workfriends against a <span class="accent">specific revenue objective.</span></h2>
+      <p class="sec-intro">Have a revenue opportunity you know is there, but need help unlocking? Commercial Sprints put the Workfriends network, relationships and commercial judgment against a specific objective, with a defined scope and deliverable.</p>
+    </div>
+
+    <div class="sprints-grid">
+      <div class="sprint-card">
+        <div class="sprint-tag">01</div>
+        <div class="sprint-title">Pipeline Acceleration</div>
+        <div class="sprint-body">Identify and prioritize the right accounts, buyers and warm relationship paths to create qualified opportunities.</div>
+      </div>
+
+      <div class="sprint-card">
+        <div class="sprint-tag">02</div>
+        <div class="sprint-title">Market &amp; Account Mapping</div>
+        <div class="sprint-body">Map the opportunity, target accounts, decision-makers, relationships and strongest commercial wedges.</div>
+      </div>
+
+      <div class="sprint-card">
+        <div class="sprint-tag">03</div>
+        <div class="sprint-title">Social Commerce Growth</div>
+        <div class="sprint-body">Find the strongest opportunities across TikTok Shop, creators, live commerce and adjacent channels, then build the commercial path to capture them.</div>
+      </div>
+
+      <div class="sprint-card">
+        <div class="sprint-tag">04</div>
+        <div class="sprint-title">Conference &amp; Market Activation</div>
+        <div class="sprint-body">Turn an important conference, event or market moment into targeted meetings, introductions, partnerships and pipeline.</div>
+      </div>
+    </div>
+
+    <div class="sprints-closer">Specific objective. Defined deliverable. Built to move revenue forward.</div>
+    <a href="mailto:kevin@getworkfriends.co?subject=Commercial%20Sprint%20Inquiry" class="btn btn-primary" style="margin-top:28px;">Explore a Commercial Sprint <span class="arrow">&rarr;</span></a>
   </div>
 </section>
 
@@ -662,19 +768,27 @@
           <div class="partner-name">Outlandish</div>
         </div>
         <div class="partner-item">
-          <div class="partner-capability">Revenue recovery</div>
+          <div class="partner-capability">Revenue Recovery</div>
           <div class="partner-name">Threecolts</div>
         </div>
         <div class="partner-item">
-          <div class="partner-capability">Clip distribution</div>
+          <div class="partner-capability">Brand-Safe Viral Distribution</div>
           <div class="partner-name">Dubble</div>
         </div>
         <div class="partner-item">
-          <div class="partner-capability">AI visibility</div>
+          <div class="partner-capability">AI Visibility</div>
           <div class="partner-name">Sorilbran</div>
         </div>
         <div class="partner-item">
-          <div class="partner-capability">Event sponsorships</div>
+          <div class="partner-capability">Owned Social Video</div>
+          <div class="partner-name">Astra Media</div>
+        </div>
+        <div class="partner-item">
+          <div class="partner-capability">Owned Clip Channels</div>
+          <div class="partner-name">Ampley</div>
+        </div>
+        <div class="partner-item">
+          <div class="partner-capability">Event Sponsorships</div>
           <div class="partner-name">CreatorIQ Connect</div>
           <div class="partner-name">Social Commerce Festival</div>
         </div>
@@ -770,7 +884,7 @@
   <div class="container">
     <div class="label">/ Start</div>
     <h2>All Upside. No Overhead.</h2>
-    <p class="sec-intro">Word of mouth brought you here. The economics will keep you. One 30-minute conversation to see if there's a fit.</p>
+    <p class="sec-intro">Word of mouth brought you here. Bring us a revenue problem and let's see what the network can unlock.</p>
     <a href="mailto:kevin@getworkfriends.co" class="btn btn-primary">Email Kevin directly <span class="arrow">&rarr;</span></a>
   </div>
 </section>

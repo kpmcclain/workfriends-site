@@ -1,301 +1,373 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Workfriends. The revenue network for creator commerce, talent & media.</title>
-<meta name="description" content="Workfriends brings relationships, market intelligence and commercial judgment together to create and work revenue opportunities across creator commerce, talent and media.">
-<link rel="canonical" href="https://getworkfriends.co/">
-<meta property="og:title" content="Workfriends. The revenue network for creator commerce, talent & media.">
-<meta property="og:description" content="Relationships, market intelligence and commercial judgment that move revenue forward.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://getworkfriends.co/">
-<meta property="og:image" content="https://getworkfriends.co/og-image.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Workfriends | The Revenue Network Built on Relationships</title>
+<meta name="description" content="Workfriends is a revenue network built on relationships, focused on Creator Commerce, Audience Development & Talent Monetization, and Emerging Media.">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 :root{
-  --ink:#0A0A0A;
-  --body:#202020;
-  --muted:#6D6D68;
-  --line:#E3E2DC;
-  --paper:#FAFAF7;
-  --block:#F1F0EB;
-  --green:#0D5F4F;
-  --mint:#D8EAE4;
-  --soft:#9FE1CB;
+  --green:#086b5a;
+  --ink:#050505;
+  --muted:#2c2c2a;
+  --paper:#fbfbf8;
+  --line:#d9d9d3;
 }
-*{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;background:var(--paper);color:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
-.container{max-width:1180px;margin:0 auto;padding:0 32px}
-.label{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
-.accent{color:var(--green)}
-nav{position:fixed;top:0;left:0;right:0;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;background:rgba(250,250,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:100}
-.logo{font-size:19px;font-weight:800;letter-spacing:-.04em;text-decoration:none;color:var(--ink)}
-.logo span{color:var(--green)}
-.navlinks{display:flex;align-items:center;gap:22px}
-.navlinks a{font-size:13px;font-weight:650;text-decoration:none;color:var(--ink)}
-.navlinks .cta{padding:9px 15px;background:var(--ink);color:white;border-radius:6px}
-.hero{padding:150px 0 90px}
-.hero h1{font-size:clamp(56px,7.6vw,102px);line-height:.98;letter-spacing:-.055em;color:var(--ink);max-width:1080px}
-.hero-sub{font-size:21px;line-height:1.55;max-width:820px;margin-top:30px}
-.hero-proof{font-size:16px;line-height:1.6;max-width:780px;margin-top:18px;color:var(--muted)}
-.tagline{font-size:18px;font-weight:750;margin-top:24px;color:var(--ink)}
-.button{display:inline-block;margin-top:28px;padding:13px 20px;background:var(--ink);color:white;text-decoration:none;font-size:14px;font-weight:750;border-radius:6px}
-.button:hover{background:var(--green)}
-section{padding:86px 0;border-top:1px solid var(--line)}
-h2{font-size:clamp(38px,4.9vw,62px);line-height:1.04;letter-spacing:-.05em;color:var(--ink);max-width:900px}
-.section-copy{font-size:18px;line-height:1.65;max-width:790px;margin-top:20px}
-.belief{background:var(--ink);color:white}
-.belief .label{color:var(--soft)}
-.belief h2{color:white;font-size:clamp(48px,6vw,78px)}
-.belief p{font-size:20px;max-width:760px;color:rgba(255,255,255,.72);margin-top:20px}
-.work{background:var(--paper)}
-.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px}
-.work-card{background:var(--paper);padding:30px}
-.work-num{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);margin-bottom:12px}
-.work-card h3{font-size:22px;letter-spacing:-.03em;color:var(--ink);margin-bottom:10px}
-.work-card p{font-size:15px;line-height:1.65}
-.path-line{font-size:18px;font-weight:700;max-width:850px;margin-top:32px;color:var(--ink)}
-.sprints{background:var(--paper)}
-.sprint-panel{margin-top:38px;background:var(--block);border:1px solid var(--line);padding:36px;display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center}
-.sprint-panel h3{font-size:clamp(28px,3.3vw,42px);line-height:1.08;letter-spacing:-.04em;color:var(--ink)}
-.sprint-panel p{font-size:16px;line-height:1.65;margin-top:16px;max-width:680px}
-.sprint-components{font-family:"JetBrains Mono",monospace;font-size:12px;line-height:2;color:var(--green);text-transform:uppercase;letter-spacing:.04em}
-.where{background:var(--block)}
-.where-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:42px}
-.where-card{background:var(--paper);border:1px solid var(--line);padding:28px}
-.where-card h3{font-size:23px;letter-spacing:-.03em;color:var(--ink);margin-bottom:12px}
-.where-card p{font-size:15px;line-height:1.65;color:var(--body)}
-.decision{background:var(--mint)}
-.decision-box{display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center}
-.decision-note{background:rgba(250,250,247,.72);border:1px solid rgba(13,95,79,.16);padding:28px}
-.decision-note strong{display:block;font-size:14px;color:var(--green);margin-bottom:8px}
-.decision-note p{font-size:15px;line-height:1.6}
-.why{background:var(--paper)}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
-.why-copy{font-size:22px;line-height:1.55;letter-spacing:-.02em;color:var(--ink)}
-.founder{border-left:3px solid var(--green);padding-left:24px;margin-top:30px}
-.founder strong{font-size:18px;color:var(--ink)}
-.founder p{font-size:15px;color:var(--muted);margin-top:8px;line-height:1.65}
-.final{background:var(--green);color:white;padding:96px 0}
-.final .label{color:rgba(255,255,255,.66)}
-.final h2{color:white;font-size:clamp(48px,6vw,76px)}
-.final p{font-size:19px;line-height:1.6;max-width:720px;margin-top:20px;color:rgba(255,255,255,.84)}
-.final .button{background:white;color:var(--ink)}
-footer{padding:30px 0;border-top:1px solid var(--line)}
-.footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted)}
-.footer a{color:var(--muted);text-decoration:none}
-@media(max-width:820px){
-  .decision-box,.why-grid,.sprint-panel{grid-template-columns:1fr}
-  .where-grid{grid-template-columns:1fr}
-  .work-grid{grid-template-columns:1fr}
-  .container{padding:0 20px}
-  .hero{padding-top:128px}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+  -webkit-font-smoothing:antialiased;
 }
-@media(max-width:560px){
-  nav{padding:0 18px}
-  .navlinks>a:first-child{display:none}
-  .hero{padding:120px 0 68px}
-  section{padding:68px 0}
-  .hero h1{font-size:52px}
-  .belief h2{font-size:48px}
-  .final{padding:72px 0}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{width:min(90%,1440px);margin:auto}
+.mono{
+  font-family:"Courier New",Courier,monospace;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-size:14px;
+  font-weight:700;
+  color:var(--green);
 }
-
-    .decision-card {
-      display: block;
-      color: inherit;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 24px;
-      padding: 34px;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease;
-    }
-    .decision-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(255,255,255,.3);
-      background: rgba(255,255,255,.025);
-    }
-    .decision-link {
-      margin-top: 24px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .decision-arrow {
-      display: inline-block;
-      transition: transform .2s ease;
-    }
-    .decision-card:hover .decision-arrow {
-      transform: translateX(5px);
-    }
-
-
-    .decision-nav {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .decision-nav-arrow {
-      display: inline-block;
-      transition: transform .2s ease;
-    }
-    .decision-nav:hover .decision-nav-arrow {
-      transform: translateX(4px);
-    }
-
-
-    .decision-nav-kicker {
-      font-size: .68em;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      opacity: .55;
-      margin-right: 2px;
-    }
-    .nav-divider {
-      width: 1px;
-      height: 20px;
-      background: currentColor;
-      opacity: .18;
-      display: inline-block;
-    }
-
+.topbar{
+  border-bottom:1px solid var(--line);
+  background:#fff;
+}
+.topbar .wrap{
+  min-height:54px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  font-size:14px;
+  font-weight:700;
+}
+.hero{
+  padding:78px 0 86px;
+  min-height:720px;
+}
+.hero h1{
+  margin:28px 0 38px;
+  max-width:1390px;
+  font-size:clamp(64px,8.3vw,132px);
+  line-height:.94;
+  letter-spacing:-.065em;
+  font-weight:800;
+}
+.green{color:var(--green)}
+.hero-copy{
+  max-width:1100px;
+  font-size:clamp(22px,2.2vw,34px);
+  line-height:1.38;
+  letter-spacing:-.025em;
+}
+.hero-bottom{
+  margin-top:36px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px 32px;
+  align-items:center;
+}
+.belief{font-size:20px;font-weight:800}
+.focus{
+  color:var(--green);
+  font-family:"Courier New",Courier,monospace;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  font-size:13px;
+  font-weight:700;
+}
+section{
+  padding:88px 0;
+  border-top:1px solid var(--line);
+}
+section h2{
+  margin:22px 0 28px;
+  max-width:1200px;
+  font-size:clamp(48px,6.2vw,96px);
+  line-height:.96;
+  letter-spacing:-.055em;
+}
+.lead{
+  max-width:900px;
+  font-size:clamp(20px,2vw,30px);
+  line-height:1.4;
+  color:var(--muted);
+}
+.three{
+  margin-top:58px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--ink);
+}
+.audience{
+  padding:30px 38px 18px 0;
+  min-height:430px;
+}
+.audience+.audience{
+  border-left:1px solid var(--line);
+  padding-left:38px;
+}
+.audience h3,.market h3,.work h3{
+  font-size:clamp(29px,2.6vw,42px);
+  line-height:1.04;
+  letter-spacing:-.04em;
+  margin:18px 0 24px;
+}
+.audience p,.market p,.work p{
+  font-size:18px;
+  line-height:1.55;
+  color:var(--muted);
+}
+.punch{font-weight:800;color:var(--ink)!important}
+.link{display:inline-block;margin-top:14px;color:var(--green);font-weight:800}
+.markets{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:56px;
+  margin-top:58px;
+}
+.market{border-top:5px solid var(--green);padding-top:20px}
+.dark{background:#050505;color:#fff}
+.dark .mono{color:#63c5ad}
+.dark .lead{color:#d5d5d0}
+.dark h2{max-width:1000px}
+.dark .link{color:#63c5ad;font-size:20px}
+.steps{
+  margin-top:55px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--ink);
+}
+.work{padding:28px 34px 12px 0}
+.work+.work{border-left:1px solid var(--line);padding-left:34px}
+.statement{
+  max-width:1050px;
+  font-size:clamp(34px,4.4vw,68px);
+  line-height:1.05;
+  letter-spacing:-.045em;
+  font-weight:800;
+}
+.quote{
+  margin-top:40px;
+  color:var(--green);
+  font-size:clamp(34px,4vw,62px);
+  line-height:1.05;
+  letter-spacing:-.04em;
+  font-weight:800;
+}
+.cta h2{max-width:1050px}
+.cta a{font-size:24px;color:var(--green);font-weight:800}
+footer{padding:30px 0 38px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+.footerlinks{display:flex;gap:20px}
+@media(max-width:850px){
+  .three,.markets,.steps{grid-template-columns:1fr}
+  .audience,.work{min-height:0;padding:28px 0!important;border-left:0!important;border-top:1px solid var(--line)}
+  .hero{min-height:0}
+}
 </style>
 </head>
 <body>
 
-<nav>
-  <a class="logo" href="#top">Workfriends<span>.</span></a>
-  <div class="navlinks">
-    <a class="decision-nav" href="/tiktok-shop/"><span class="decision-nav-kicker">Explore</span> TikTok Shop Decision Tree</a>
-    <span class="nav-divider" aria-hidden="true"></span><a class="cta" href="mailto:kevin@getworkfriends.co?subject=Use%20the%20network">Use the network</a>
+<div class="topbar">
+  <div class="wrap">
+    <a href="/tiktok-shop/">Thinking about TikTok Shop? Start with the Decision Tree →</a>
+    <a href="#start">Use the network</a>
   </div>
-</nav>
+</div>
 
-<main id="top">
-
-<section class="hero">
-  <div class="container">
-    <div class="label">A Boutique Revenue Network · Est. 2026</div>
-    <h1>The revenue network for <span class="accent">creator commerce, talent &amp; media.</span></h1>
-    <p class="hero-sub">Workfriends brings relationships, market intelligence and commercial judgment together to create and work revenue opportunities.</p>
-    <div class="tagline">All Upside. No Overhead.</div>
-  </div>
-</section>
-
-<section class="belief">
-  <div class="container">
-    <div class="label">/ What we believe</div>
-    <h2>People outlast companies.</h2>
-    <p>Companies change. People move. Relationships compound.</p>
-  </div>
-</section>
-
-<section class="work">
-  <div class="container">
-    <div class="label">/ How Workfriends works</div>
-    <h2>We work across the <span class="accent">path to revenue.</span></h2>
-    <div class="work-grid">
-      <div class="work-card">
-        <div class="work-num">01</div>
-        <h3>Market Intelligence</h3>
-        <p>Understand the market, the players, the economics, what is changing and where opportunity is developing.</p>
-      </div>
-      <div class="work-card">
-        <div class="work-num">02</div>
-        <h3>Ecosystem + Relationship Mapping</h3>
-        <p>Identify who matters, who knows whom, where the strongest relationships sit and the most credible path into the opportunity.</p>
-      </div>
-      <div class="work-card">
-        <div class="work-num">03</div>
-        <h3>Opportunity Development</h3>
-        <p>Turn market insight and relationships into real commercial opportunities with the right buyers, partners and positioning.</p>
-      </div>
-      <div class="work-card">
-        <div class="work-num">04</div>
-        <h3>Deal Architecture + Advancement</h3>
-        <p>Bring the right parties together, shape the opportunity, help structure the commercial path and work it toward revenue.</p>
-      </div>
+<header class="hero">
+  <div class="wrap">
+    <div class="mono">A boutique revenue network · Est. 2026</div>
+    <h1>The revenue network built on <span class="green">relationships.</span></h1>
+    <div class="hero-copy">
+      Workfriends brings together the trust, judgment and relationships of proven executives to create and close deals in high-growth markets.
     </div>
+    <div class="hero-bottom">
+      <div class="belief">People Outlast Companies.</div>
+      <div class="focus">Creator Commerce · Audience Development &amp; Talent Monetization · Emerging Media</div>
+    </div>
+  </div>
+</header>
 
+<main>
+
+<section>
+  <div class="wrap">
+    <div class="mono">/ The network</div>
+    <h2>Trust. Judgment. <span class="green">Relationships.</span></h2>
+    <p class="lead">
+      Companies change. Titles change. Markets change. The trust, judgment and relationships
+      built over a career compound. Workfriends puts that accumulated value to work.
+    </p>
+
+    <div class="three">
+      <article class="audience">
+        <div class="mono">01 / Brands</div>
+        <h3>Make better decisions.</h3>
+        <p>
+          Every agency and service provider will tell you they're the best choice, whether
+          their model is right for you or not.
+        </p>
+        <p>
+          We help you understand the landscape, ask the right questions and find the right
+          capabilities before you commit meaningful time and budget.
+        </p>
+        <a class="link" href="/tiktok-shop/">See how we think →</a>
+      </article>
+
+      <article class="audience">
+        <div class="mono">02 / Partners</div>
+        <h3>Condense your timeline to success.</h3>
+        <p>
+          The right customer, partner or relationship can change the trajectory of a company.
+        </p>
+        <p>
+          Workfriends brings executive-level trust, judgment and relationships to companies
+          we believe in. We know who matters, how to get there and how to turn the right
+          conversation into a deal.
+        </p>
+        <p class="punch">Sometimes it starts with one text.</p>
+        <a class="link" href="mailto:kevin@getworkfriends.co?subject=Work%20with%20Workfriends">Work with Workfriends →</a>
+      </article>
+
+      <article class="audience">
+        <div class="mono">03 / Executives</div>
+        <h3>Unlock the value you've already created.</h3>
+        <p>
+          You've spent a career building trust, judgment and relationships. Those assets
+          belong to you, not your employer.
+        </p>
+        <p>
+          Workfriends gives proven executives a way to put that accumulated value to work,
+          create opportunities and build recurring revenue outside of a W-2.
+        </p>
+        <a class="link" href="mailto:kevin@getworkfriends.co?subject=Workfriends%20Executive%20Network">Join the network →</a>
+      </article>
+    </div>
   </div>
 </section>
 
-<section class="where">
-  <div class="container">
-    <div class="label">/ Where we work</div>
-    <h2>Three markets. One <span class="accent">commercial network.</span></h2>
-    <div class="where-grid">
-      <div class="where-card">
+<section>
+  <div class="wrap">
+    <div class="mono">/ Where we work</div>
+    <h2>Go where the <span class="green">growth is.</span></h2>
+    <p class="lead">
+      Workfriends focuses its network on markets where technology, consumer behavior and
+      new business models are creating meaningful economic opportunity.
+    </p>
+
+    <div class="markets">
+      <article class="market">
+        <div class="mono">01</div>
         <h3>Creator Commerce</h3>
-        <p>TikTok Shop, live commerce, creator and affiliate, commerce technology and creator-led growth.</p>
-      </div>
-      <div class="where-card">
-        <h3>Talent</h3>
-        <p>Creators, athletes, entertainment, owned channels, audience growth, distribution and IP.</p>
-      </div>
-      <div class="where-card">
-        <h3>Media</h3>
-        <p>Media, platforms, sponsorships, brand partnerships, distribution, monetization and data.</p>
-      </div>
+        <p>TikTok Shop, live commerce, affiliate, creator marketing, commerce technology and creator-led selling.</p>
+      </article>
+      <article class="market">
+        <div class="mono">02</div>
+        <h3>Audience Development &amp; Talent Monetization</h3>
+        <p>New ways for creators, athletes, entertainers and IP owners to grow audiences, expand distribution and turn attention into revenue.</p>
+      </article>
+      <article class="market">
+        <div class="mono">03</div>
+        <h3>Emerging Media</h3>
+        <p>New platforms, technologies and business models changing how audiences are reached, measured, monetized and moved to action.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="decision">
-  <div class="container">
-    <a class="decision-card" href="/tiktok-shop/" aria-label="Explore the TikTok Shop Decision Tree">
-      <div class="label">/ Workfriends Decision Tree</div>
-      <div class="decision-card-row">
-        <div>
-          <h2>Navigating <span class="accent">TikTok Shop?</span></h2>
-          <p class="section-copy">A dedicated resource for brands and agencies.</p>
-          <div class="decision-link">Explore the Decision Tree <span class="decision-arrow">→</span></div>
-        </div>
-      </div>
-    </a>
+<section class="dark">
+  <div class="wrap">
+    <div class="mono">/ Workfriends Decision Tree</div>
+    <h2>Navigating <span class="green">TikTok Shop?</span></h2>
+    <p class="lead">
+      Don't start by asking which agency to hire. Start by understanding the opportunity,
+      the economics, the operating models and the questions that determine who is right for you.
+    </p>
+    <a class="link" href="/tiktok-shop/">Start with the TikTok Shop Decision Tree →</a>
   </div>
 </section>
 
-<section class="why">
-  <div class="container">
-    <div class="label">/ Why Workfriends</div>
-    <h2>Built from inside <span class="accent">the market.</span></h2>
-    <p class="section-copy">Workfriends stays close to the founders, CEOs, operators, brands and agencies shaping these markets.</p>
-    <div class="founder">
-      <strong>Founded by Kevin McClain</strong>
-      <p>19 years across media, advertising, entertainment and the Creator Economy.</p>
+<section>
+  <div class="wrap">
+    <div class="mono">/ How it works</div>
+    <h2>Across the path to <span class="green">revenue.</span></h2>
+    <div class="steps">
+      <article class="work">
+        <div class="mono">01</div>
+        <h3>Market Intelligence</h3>
+        <p>Understand the market, the economics, what is changing and where opportunity is developing.</p>
+      </article>
+      <article class="work">
+        <div class="mono">02</div>
+        <h3>Relationship Mapping</h3>
+        <p>Identify who matters, who knows whom and the warmest credible path into an opportunity.</p>
+      </article>
+      <article class="work">
+        <div class="mono">03</div>
+        <h3>Opportunity Development</h3>
+        <p>Turn market insight and relationships into meaningful commercial opportunities.</p>
+      </article>
+      <article class="work">
+        <div class="mono">04</div>
+        <h3>Deal Architecture</h3>
+        <p>Bring the right parties together, shape the commercial path and work the opportunity toward revenue.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="sprints">
-  <div class="container">
-    <div class="label">/ Commercial Sprints</div>
-    <h2>Put the network against a <span class="accent">specific commercial goal.</span></h2>
-    <p class="section-copy">Workfriends assembles the right senior operators around a defined objective.</p>
-    <p class="path-line">Market Intelligence · Relationships · Strategy · Execution</p>
-    <a class="button" href="mailto:kevin@getworkfriends.co?subject=Commercial%20Sprint">Talk to Workfriends →</a>
+<section>
+  <div class="wrap">
+    <div class="mono">/ Why Workfriends</div>
+    <div class="statement">
+      Every introduction spends relationship capital. <span class="green">We do the work before we make it.</span>
+    </div>
+    <p class="lead" style="margin-top:34px">
+      Workfriends stays close to the founders, CEOs, operators, brands, agencies and executives
+      shaping the markets where we work.
+    </p>
+    <div class="quote">People Outlast Companies.</div>
   </div>
 </section>
 
-<section class="final">
-  <div class="container">
-    <div class="label">/ Use the network</div>
-    <h2>What are you trying to grow?</h2>
-    <p>Tell us what you're working on. We'll figure out whether and how the network can help.</p>
-    <a class="button" href="mailto:kevin@getworkfriends.co?subject=What%20I%27m%20trying%20to%20grow">Use the network →</a>
+<section>
+  <div class="wrap">
+    <div class="mono">/ Work with Workfriends</div>
+    <h2>Put the network against an important <span class="green">revenue objective.</span></h2>
+    <p class="lead">
+      Some opportunities require more than an introduction. Workfriends brings executive judgment,
+      market intelligence, relationships and the right operators together around a defined commercial objective.
+    </p>
+    <p class="belief" style="margin-top:34px">Specific objective. Executive network. Defined outcome.</p>
+    <a class="link" href="mailto:kevin@getworkfriends.co?subject=Work%20with%20Workfriends">Work with Workfriends →</a>
+  </div>
+</section>
+
+<section class="cta" id="start">
+  <div class="wrap">
+    <div class="mono">/ Use the network</div>
+    <h2>What are you trying to <span class="green">grow?</span></h2>
+    <p class="lead">Bring us a problem, an opportunity or a relationship worth building.</p>
+    <a href="mailto:kevin@getworkfriends.co">Email Kevin directly →</a>
   </div>
 </section>
 
 </main>
 
 <footer>
-  <div class="container footer">
-    <div>Workfriends. · People outlast companies. · All Upside. No Overhead.</div>
-    <div><a href="/tiktok-shop/">TikTok Shop Decision Tree</a> · <a href="mailto:kevin@getworkfriends.co">Email</a> · <a href="https://www.linkedin.com/in/kpmcclain/">LinkedIn</a></div>
+  <div class="wrap">
+    <div><strong>Workfriends.</strong> &nbsp; People Outlast Companies. &nbsp; All Upside. No Overhead.</div>
+    <div class="footerlinks">
+      <a href="/tiktok-shop/">TikTok Shop Decision Tree</a>
+      <a href="/for-ai/">For AI</a>
+    </div>
   </div>
 </footer>
 

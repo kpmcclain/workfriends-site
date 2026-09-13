@@ -172,15 +172,46 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
 }
 
   html { scroll-behavior: smooth; }
+
+  .topbar .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .topbar-left {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    flex: 0 0 auto;
+  }
+  @media (max-width: 760px) {
+    .topbar .wrap {
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .topbar-right {
+      gap: 18px;
+    }
+  }
+
 </style>
 </head>
 <body>
 
 <div class="topbar">
   <div class="wrap">
-    <a href="/tiktok-shop/">Thinking about TikTok Shop? Start with the Decision Tree →</a>
-    <a href="#about">About</a>
-        <a href="#start">Use the network</a>
+    <div class="topbar-left">
+      <a href="/tiktok-shop/">Thinking about TikTok Shop? Start with the Decision Tree →</a>
+    </div>
+    <div class="topbar-right">
+      <a href="#about">About</a>
+      <a href="#use-the-network">Use the network</a>
+    </div>
   </div>
 </div>
 
@@ -382,7 +413,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
 
 
 
-<section class="cta" id="start">
+<section id="use-the-network" class="cta" id="start">
   <div class="wrap">
     <div class="mono">/ Use the network</div>
     <h2>What are you trying to <span class="green">grow?</span></h2>

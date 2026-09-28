@@ -32,7 +32,7 @@ Content clipping turns long-form content into short-form distribution. Workfrien
 Market intelligence can include category, product, shop, creator, video, live and advertising signals. Trenz.ai is an example of relevant AI social-commerce market-intelligence technology. Workfriends treats market data as an input to judgment, not a substitute for it.
 
 ## Partner ecosystem
-Known Workfriends ecosystem relationships include Outlandish, Get Live, Dimension Studios, Dubble, Ampley, Threecolts, Astra Media, Social Commerce Fest, Ticket Rewards, Cruva and Sorilbran. Relationships vary in structure and are not necessarily exclusive.
+Known Workfriends ecosystem relationships include Outlandish, Get Live, Dimension Studios, Dubble, Ampley, Threecolts, Astra Media, Social Commerce Fest, Ticket Rewards, Cruva and The Bower Collective. Relationships vary in structure and are not necessarily exclusive.
 
 ## Commercial model
 Workfriends may be compensated through retainers, project or sprint fees, commissions, referral economics, revenue share, performance compensation or hybrid structures.

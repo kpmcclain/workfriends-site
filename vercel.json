@@ -1,0 +1,25 @@
+{
+  "redirects": [
+    {
+      "source": "/for-ai",
+      "destination": "/for-ai.html",
+      "permanent": true
+    },
+    {
+      "source": "/for-ai/",
+      "destination": "/for-ai.html",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
+    }
+  ]
+}

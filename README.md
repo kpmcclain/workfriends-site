@@ -12,7 +12,7 @@ A static website. No build step, framework, database, account system or API key.
 
 ## What is here
 
-- Home: Workfriends positioning around creator-economy revenue, three commercial entry points, the founder story, a named Commercial Sprints offer and both decision briefs. Inter, the single-color headline and The Universe are retained. The homepage uses the still artwork until a visitor chooses to explore; the 3D engine loads on that interaction.
+- Home: Workfriends positioning around creator-economy revenue, three commercial entry points, the founder story, a named Commercial Sprints offer and both decision briefs. Inter, the single-color headline and The Universe are retained. The homepage starts the animated Universe automatically, with pause controls, reduced-motion support and a still fallback.
 - `/universe/`: 167 readable concepts, 19 illustrative pathways and the interactive scene.
 - `/tiktok-shop/`: the existing copy, a guided decision brief and the existing inquiry form. Visitors contact Kevin for advice; the site does not generate a personalized recommendation.
 - `/audience-development/`: an adaptive guided brief for brands, athletes, celebrities, IP owners and live-entertainment opportunities, with public context and a direct inquiry form. Partner selection and tailored advice come from Kevin.
@@ -43,7 +43,7 @@ Edit the text directly in the relevant HTML file. In the Universe, concepts live
 
 ## The visual metaphor
 
-500 spheres on desktop / 300 on mobile. 167 have public concept labels; a limited set is visible at any moment. Most nodes are disconnected. Selected encounters bring two distinct nodes together, grow both, and activate a secondary pathway. Growth symbolizes commercial possibility, not a live metric, member directory or valuation. On the homepage, the 3D engine loads only after the visitor chooses to explore. Motion pauses offscreen and respects reduced-motion preferences. A static vector field and all ordinary page content remain if WebGL fails.
+500 spheres on desktop / 300 on mobile. 167 have public concept labels; a limited set is visible at any moment. Most nodes are disconnected. Selected encounters bring two distinct nodes together, grow both, and activate a secondary pathway. Growth symbolizes commercial possibility, not a live metric, member directory or valuation. The homepage starts the scene automatically. Motion pauses offscreen and respects reduced-motion preferences. A static vector field and all ordinary page content remain if WebGL fails.
 
 ## Inquiry form
 

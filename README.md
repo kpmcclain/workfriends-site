@@ -39,7 +39,7 @@ After publication, submit the updated sitemap in Google Search Console and verif
 
 ## Editing
 
-Edit the text directly in the relevant HTML file. In the Universe, concepts live in `#concept-data` and the 19 relationships in the `#path-data` JSON block. Scene settings are near `const CONFIG`. The CSS variables at the start of each page control paper, ink and green. The review file contains all content in expandable sections. Keep published pages consistent if you change a shared statement.
+Edit the text directly in the relevant HTML file. The scene reads concepts from `#scene-concepts` and the 19 relationships from `#path-data`. The dedicated Universe page also renders every concept as ordinary HTML in `#concept-data`. Scene settings are near `const CONFIG`. The CSS variables at the start of each page control paper, ink and green. The review file contains all content in expandable sections. Keep published pages consistent if you change a shared statement.
 
 ## The visual metaphor
 

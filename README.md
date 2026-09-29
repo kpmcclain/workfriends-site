@@ -4,7 +4,7 @@ A static website. No build step, framework, database, account system or API key.
 
 ## Form endpoint configuration
 
-This build uses **formsubmit** at `https://formsubmit.co/kevin@getworkfriends.co`. The authoring source controls this in `wf-form-config.json`; rebuilding updates all three forms together. Formspree must use the exact `/f/` endpoint from the owner's verified account, never an email-address endpoint or a made-up form ID. Its free native flow uses Formspree's hosted confirmation page. A custom native return page is a paid Formspree setting; `_next` must not be sent as though it enables that feature. The `/thanks/` page remains available for a separately configured supported return flow. Keep the default provider spam checks enabled. The migration adapter is prepared, but configuration and actual inbox delivery must be verified before launch. Historical FormSubmit notes below describe the prior implementation.
+This build uses **formspree** at `https://formspree.io/f/mvkglbdw`. The authoring source controls this in `wf-form-config.json`; rebuilding updates all three forms together. Formspree must use the exact `/f/` endpoint from the owner's verified account, never an email-address endpoint or a made-up form ID. Its free native flow uses Formspree's hosted confirmation page. A custom native return page is a paid Formspree setting; `_next` must not be sent as though it enables that feature. The `/thanks/` page remains available for a separately configured supported return flow. Keep the default provider spam checks enabled. The migration adapter is prepared, but configuration and actual inbox delivery must be verified before launch. Historical FormSubmit notes below describe the prior implementation.
 
 ## GitHub → Vercel
 

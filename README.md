@@ -4,7 +4,7 @@ A static website. No build step, framework, database, account system or API key.
 
 ## GitHub → Vercel
 
-1. Unzip this folder. Put its **contents** at the root of your website repository: `index.html`, `assets`, `tiktok-shop`, `audience-development`, `experiential`, `contact`, `universe`, `market-intelligence`, the six commercial-page folders, `for-ai.html`, `404.html`, `robots.txt`, `sitemap.xml`, and `vercel.json`. Upload the complete contents together.
+1. Unzip this folder. Put its **contents** at the root of your website repository: `index.html`, `assets`, `tiktok-shop`, `audience-development`, `experiential`, `contact`, `thanks`, `universe`, `market-intelligence`, the six commercial-page folders, `for-ai.html`, `404.html`, `robots.txt`, `sitemap.xml`, and `vercel.json`. Upload the complete contents together.
 2. Commit the files to GitHub. Your existing Vercel integration can deploy them. For a new Vercel project, select **Other**, leave Build Command empty, and use the repository root as the output.
 3. Keep your existing domain settings. The canonical URLs target https://www.getworkfriends.co. If you choose another canonical domain, replace it consistently in HTML, robots.txt and sitemap.xml.
 
@@ -33,7 +33,7 @@ A static website. No build step, framework, database, account system or API key.
 
 Use a Vercel preview before switching the production deployment. Confirm the homepage, universe, Market Intelligence, TikTok Shop, Audience Development, experiential, contact and For AI URLs open correctly. Check the animation on an actual phone and laptop; software-rendered browser checks do not establish device performance.
 
-Send an intentional test inquiry through each hosted form and confirm that Kevin receives both the contact fields and the relevant decision brief. FormSubmit activation for the stable Vercel preview was confirmed by the owner on September 28, 2026. Inbox delivery has not yet been independently verified. The site displays a copyable email address as an alternative. With JavaScript, forms use the service’s AJAX endpoint and show success or error feedback on the page.
+Send an intentional test inquiry through each hosted form and confirm that Kevin receives both the contact fields and the relevant decision brief. FormSubmit activation for the stable Vercel preview was confirmed by the owner on September 28, 2026. Inbox delivery has not yet been independently verified. The site displays a copyable email address as an alternative. Forms use the provider’s native browser POST, including its security check. With JavaScript, an accepted submission returns to this deployment’s /thanks/ page; without JavaScript the provider shows its own confirmation.
 
 After publication, submit the updated sitemap in Google Search Console and verify the new pages can be indexed. Check that deployment protection or hosting rules do not block public crawlers. Search and AI visibility can be measured after discovery and recrawling; no visibility increase has been established yet.
 
@@ -47,11 +47,11 @@ Edit the text directly in the relevant HTML file. The scene reads concepts from 
 
 ## Inquiry form
 
-The existing FormSubmit endpoint is preserved: kevin@getworkfriends.co. A visitor with a decision brief can add further context without having to repeat the brief in a required text field. Decision answers stay in the browser until the visitor chooses to submit. If a visitor follows an on-site contact link after using a tree, a temporary session-storage handoff carries that brief to the contact form, where it is visible and removable. Submitting sends the inquiry fields and attached brief through FormSubmit; normal browser POST remains available without JavaScript. Automated verification intercepted submissions and simulated the response; no test inquiry was sent by the automated checks. Checks cover accepted, rejected and network-failure responses, retaining entered text after failure. Preview activation is confirmed. Verify actual inbox delivery and the form configuration on the final production domain before launch.
+The existing FormSubmit endpoint is preserved: kevin@getworkfriends.co. A visitor with a decision brief can add further context without having to repeat the brief in a required text field. Decision answers stay in the browser until the visitor chooses to submit. If a visitor follows an on-site contact link after using a tree, a temporary session-storage handoff carries that brief to the contact form, where it is visible and removable. Submitting sends the inquiry fields and attached brief through the provider’s normal browser POST. The default security check remains enabled. The exact page URL is provided using the documented _url field, and _next is set to this deployment’s /thanks/ URL when JavaScript is available. Automated verification intercepts submissions; it does not prove actual inbox delivery. Preview activation is confirmed. Verify actual inbox delivery and the form configuration on the final production domain before launch.
 
 ## Unconfirmed delivery and recovery
 
-On September 29 the owner reported a real form submission reaching the unconfirmed/error state. Fresh inbox delivery remains a launch gate. A read-only provider diagnostic from the execution environment was blocked; that does not establish the cause of the owner's browser failure. All three forms now distinguish connection, timeout, HTTP, activation and provider-rejection errors. A failed submission preserves the fields and offers a complete email draft or a copyable inquiry. Long inquiries can be copied and pasted into the email app. Nothing is sent automatically through this fallback, and a provider response is never treated as proof of inbox delivery.
+On September 29 the owner’s second test confirmed that the AJAX request timed out. Fresh inbox delivery remains a launch gate. A read-only provider diagnostic from the execution environment was blocked; that does not establish the cause of the owner's browser failure. The AJAX transport has now been removed. Native submission lets the provider display any security check, rejection or confirmation directly. The script does not infer success from sending the request. On submission, a temporary draft is stored in the current browser tab and can be restored when returning to the form. It is cleared on the confirmation page or discarded after 30 minutes when the form is opened again. Recovery offers a complete email draft or a copyable inquiry, including long briefs. Nothing is sent automatically through the fallback. The confirmation page is excluded from the sitemap and marked noindex. Provider acceptance is not proof of inbox delivery.
 
 ## Inquiry attribution
 
@@ -59,9 +59,7 @@ Each JavaScript-enhanced submission includes the landing-page path, inquiry-page
 
 `wf-analytics.js` adds Vercel page-view tracking to the Workfriends domains and this project's Vercel deployments. Local review does not send analytics. Query strings and fragments are removed from page-view events; form details are not sent to Analytics. Web Analytics was confirmed enabled in the Workfriends Vercel project on September 29, 2026. Use the dashboard's Production/Preview filter to separate launched-site traffic from review visits. Publishing this build is required before the production site uses the new integration. See https://vercel.com/docs/analytics/quickstart and https://vercel.com/docs/analytics/using-web-analytics.
 
-The optional `bookingUrl` constant in `wf-contact.js` is empty until Kevin supplies his public scheduling URL. Once configured, the booking link appears only after the inquiry provider accepts the submission. There is no placeholder booking link on the public site.
-
-The page emits a `wf-inquiry-submitted` browser event after the form provider reports acceptance. The event includes page, topic, audience and whether a brief was present; it omits the visitor’s name, email and message. This remains a local integration hook; custom events are not sent to an external collector. Provider acceptance is not proof of inbox delivery.
+The optional `bookingUrl` constant in `wf-contact.js` is empty until Kevin supplies his public scheduling URL. Once configured, the booking link appears on the /thanks/ page. There is no placeholder booking link on the public site. No custom form-conversion event is sent; /thanks/ page views are not proof of inbox delivery.
 
 ## Search and AI discovery
 

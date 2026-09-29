@@ -268,7 +268,7 @@ TIKTOK_SHOP_DECISION_TREE: https://www.getworkfriends.co/tiktok-shop/</div>
  document.documentElement.classList.add('js');
 })();
 </script><script>(()=>{
- const address='kevin@getworkfriends.co',storageKey='workfriends-inquiry-brief',visitKey='workfriends-visit';
+ const address='kevin@getworkfriends.co',storageKey='workfriends-inquiry-brief',visitKey='workfriends-visit',draftKey='workfriends-pending-inquiry';
  // Populate only after Kevin supplies the public booking URL.
  const bookingUrl='';
  const query=new URLSearchParams(location.search);
@@ -289,6 +289,10 @@ TIKTOK_SHOP_DECISION_TREE: https://www.getworkfriends.co/tiktok-shop/</div>
  }
  window.workfriendsCopy=copyText;
  document.querySelectorAll('[data-copy-email]').forEach(button=>button.addEventListener('click',()=>copyText(address,button)));
+ if(document.getElementById('inquiry-thanks')){
+  try{sessionStorage.removeItem(draftKey);}catch{}
+  if(bookingUrl){try{const destination=new URL(bookingUrl);if(destination.protocol==='https:'){const booking=document.createElement('a');booking.className='primary';booking.href=destination.href;booking.textContent='Book a conversation with Workfriends →';document.getElementById('inquiry-thanks-actions').prepend(booking);}}catch{}}
+ }
  const form=document.getElementById('inquiry-form'),topic=document.getElementById('contact-topic'),audience=document.getElementById('contact-audience'),brief=document.getElementById('contact-brief-field'),attached=document.getElementById('contact-attached-brief');
  function setContext(subject,payload,audienceValue){
   if(!form)return;if(subject&&topic)topic.value=subject;
@@ -307,7 +311,7 @@ TIKTOK_SHOP_DECISION_TREE: https://www.getworkfriends.co/tiktok-shop/</div>
   if(link.getAttribute('href').startsWith('#'))setContext(subject,active,link.dataset.contactAudience);
   else try{if(active?.summary)sessionStorage.setItem(storageKey,JSON.stringify({...active,topic:subject,audience:link.dataset.contactAudience||''}));else sessionStorage.removeItem(storageKey);}catch{}
  });
- document.querySelectorAll('form[action="https://formsubmit.co/'+address+'"]').forEach(inquiry=>{
+ document.querySelectorAll('form[action="https://formsubmit.co/'+address+'"]').forEach((inquiry,index)=>{
   const submit=inquiry.querySelector('[type="submit"]'),status=document.createElement('p');
   status.className='form-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');inquiry.append(status);
   for(const [name,value] of Object.entries({...visit,inquiry_page:location.protocol==='file:'?'Local review':location.pathname})){
@@ -334,32 +338,38 @@ TIKTOK_SHOP_DECISION_TREE: https://www.getworkfriends.co/tiktok-shop/</div>
    if(situation){situation.required=!hasBrief;if(situationLabel)situationLabel.textContent=originalLabel+(hasBrief?' (optional with your brief)':'');}
   }
   document.addEventListener('wf-brief-updated',updateRequiredContext);updateRequiredContext();
-  inquiry.addEventListener('submit',async event=>{
-   event.preventDefault();if(inquiry.dataset.sending==='true'||inquiry.dataset.sent==='true')return;
-   if(!inquiry.reportValidity())return;
-   const data=Object.fromEntries(new FormData(inquiry));
-   if(inquiry===form&&topic.value.trim())data._subject='Workfriends — '+topic.value.trim();
-   data._captcha='false';data._template='table';
-   const initial=submit.textContent;inquiry.dataset.sending='true';submit.disabled=true;submit.textContent='Sending…';recovery.hidden=true;status.dataset.state='pending';delete status.dataset.errorCode;status.textContent='Sending your inquiry. Keep this page open for confirmation.';
-   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
+  const initial=submit.textContent;
+  function hidden(name,value){let field=inquiry.querySelector('input[name="'+name+'"]');if(!field){field=document.createElement('input');field.type='hidden';field.name=name;inquiry.append(field);}field.value=value;}
+  if(/^https?:$/.test(location.protocol)){
+   hidden('_url',location.origin+location.pathname);
+   hidden('_next',new URL('/thanks/',location.href).href);
+  }
+  window.addEventListener('pageshow',()=>{
+   inquiry.dataset.sending='false';submit.disabled=false;submit.textContent=initial;status.textContent='';delete status.dataset.state;
    try{
-    const response=await fetch('https://formsubmit.co/ajax/'+address,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data),signal:controller.signal});
-    let result;try{result=await response.json();}catch{throw new Error(response.ok?'invalid-response':'http-'+response.status);}
-    if(!response.ok)throw new Error('http-'+response.status);
-    if(result?.success!==true&&result?.success!=='true'){
-     const providerMessage=typeof result?.message==='string'?result.message.replace(/\s+/g,' ').slice(0,220):'';
-     throw Object.assign(new Error(/activat|confirm.*email|verify.*email/i.test(providerMessage)?'activation-required':'provider-rejected'),{providerMessage});
+    const draft=JSON.parse(sessionStorage.getItem(draftKey)||'null');
+    if(!draft)return;
+    if(!draft.savedAt||Date.now()-draft.savedAt>30*60*1000){sessionStorage.removeItem(draftKey);return;}
+    if(draft.path!==location.pathname||draft.index!==index)return;
+    for(const field of inquiry.elements){
+     if(!field.name||field.name.startsWith('_')||!Object.hasOwn(draft.data,field.name))continue;
+     if(field.type==='radio'||field.type==='checkbox')field.checked=field.value===draft.data[field.name];
+     else if(field.type!=='submit'&&field.type!=='button'&&field.type!=='file')field.value=draft.data[field.name];
     }
-    document.dispatchEvent(new CustomEvent('wf-inquiry-submitted',{detail:{page:location.pathname,topic:data.topic||data._subject||'',audience:data.audience||data.company_type||'',hasBrief:!!(data.decision_brief||data.decision_tree_summary||data.audience_decision_brief)}}));
-    inquiry.dataset.sent='true';status.dataset.state='success';status.textContent='Thank you. Your inquiry has been submitted to Workfriends. We’ll be in touch.';submit.textContent='Submitted';
-    if(bookingUrl){try{const destination=new URL(bookingUrl);if(destination.protocol==='https:'){const booking=document.createElement('a');booking.className='text-link';booking.href=destination.href;booking.textContent='Book a conversation with Workfriends →';status.append(document.createElement('br'),booking);}}catch{}}
-   }catch(error){
-    const code=error.name==='AbortError'?'timeout':error instanceof TypeError?'connection':/^(http-\d{3}|invalid-response|activation-required|provider-rejected)$/.test(error.message)?error.message:'unconfirmed';
-    const messages={timeout:'The form service took too long to respond, so we cannot confirm your submission.',connection:'We could not connect to the form service, so we cannot confirm your submission.','activation-required':'The form service says email delivery still needs activation.','provider-rejected':'The form service did not accept your inquiry.','invalid-response':'The form service returned an unexpected response, so we cannot confirm your submission.','http-403':'The form service blocked this submission.','http-429':'The form service is temporarily limiting submissions.'};
-    status.dataset.state='error';status.dataset.errorCode=code;status.textContent=(messages[code]||(/^http-5/.test(code)?'The form service is temporarily unavailable.':'We could not confirm your submission.'))+' Your message and answers are still here.';
-    if(code==='provider-rejected'&&error.providerMessage)status.append(document.createTextNode(' The service says: '+error.providerMessage));
-    console.warn('Workfriends inquiry not confirmed:',code);showRecovery(data);submit.disabled=false;submit.textContent=initial;
-   }finally{clearTimeout(timer);inquiry.dataset.sending='false';status.scrollIntoView({block:'nearest'});}
+    if(inquiry===form&&brief?.value){brief.disabled=false;attached.hidden=false;document.getElementById('contact-brief-label').textContent='Your decision brief: included with your inquiry';}
+    if(draft.data.decision_tree_summary){const notice=document.getElementById('brief-included');if(notice)notice.hidden=false;}
+    if(draft.data.audience_decision_brief){const notice=document.getElementById('audience-brief-included');if(notice)notice.hidden=false;}
+    updateRequiredContext();status.dataset.state='recovery';status.textContent='Your inquiry is still here. If you did not see a confirmation, you can try again or send it by email.';showRecovery(draft.data);
+   }catch{}
+  });
+  inquiry.addEventListener('submit',event=>{
+   if(inquiry.dataset.sending==='true'){event.preventDefault();return;}
+   if(!inquiry.reportValidity()){event.preventDefault();return;}
+   if(inquiry===form&&topic?.value.trim())hidden('_subject','Workfriends: '+topic.value.trim());
+   const data=Object.fromEntries(new FormData(inquiry));
+   try{sessionStorage.setItem(draftKey,JSON.stringify({path:location.pathname,index,savedAt:Date.now(),data}));}catch{}
+   inquiry.dataset.sending='true';submit.disabled=true;submit.textContent='Continuing…';recovery.hidden=true;status.dataset.state='pending';status.textContent='Complete any security check on the next screen to send your inquiry.';
+   // Allow the browser's normal POST. Do not replace it with a cross-origin fetch.
   });
  });
 })();

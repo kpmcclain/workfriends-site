@@ -33,7 +33,7 @@ A static website. No build step, framework, database, account system or API key.
 
 Use a Vercel preview before switching the production deployment. Confirm the homepage, universe, Market Intelligence, TikTok Shop, Audience Development, experiential, contact and For AI URLs open correctly. Check the animation on an actual phone and laptop; software-rendered browser checks do not establish device performance.
 
-Send an intentional test inquiry through each hosted form and confirm that Kevin receives both the contact fields and the relevant decision brief. Existing FormSubmit delivery and activation have not been verified end to end. The site displays a copyable email address as an alternative. With JavaScript, forms use the service’s AJAX endpoint and show success or error feedback on the page.
+Send an intentional test inquiry through each hosted form and confirm that Kevin receives both the contact fields and the relevant decision brief. FormSubmit activation for the stable Vercel preview was confirmed by the owner on September 28, 2026. Inbox delivery has not yet been independently verified. The site displays a copyable email address as an alternative. With JavaScript, forms use the service’s AJAX endpoint and show success or error feedback on the page.
 
 After publication, submit the updated sitemap in Google Search Console and verify the new pages can be indexed. Check that deployment protection or hosting rules do not block public crawlers. Search and AI visibility can be measured after discovery and recrawling; no visibility increase has been established yet.
 
@@ -47,7 +47,7 @@ Edit the text directly in the relevant HTML file. The scene reads concepts from 
 
 ## Inquiry form
 
-The existing FormSubmit endpoint is preserved: kevin@getworkfriends.co. A visitor with a decision brief can add further context without having to repeat the brief in a required text field. Decision answers stay in the browser until the visitor chooses to submit. If a visitor follows an on-site contact link after using a tree, a temporary session-storage handoff carries that brief to the contact form, where it is visible and removable. Submitting sends the inquiry fields and attached brief through FormSubmit; normal browser POST remains available without JavaScript. Verification intercepted submissions and simulated the response; no test inquiry was sent. Checks cover accepted, rejected and network-failure responses, retaining entered text after failure. Delivery and any FormSubmit account activation remain subject to the existing service configuration.
+The existing FormSubmit endpoint is preserved: kevin@getworkfriends.co. A visitor with a decision brief can add further context without having to repeat the brief in a required text field. Decision answers stay in the browser until the visitor chooses to submit. If a visitor follows an on-site contact link after using a tree, a temporary session-storage handoff carries that brief to the contact form, where it is visible and removable. Submitting sends the inquiry fields and attached brief through FormSubmit; normal browser POST remains available without JavaScript. Automated verification intercepted submissions and simulated the response; no test inquiry was sent by the automated checks. Checks cover accepted, rejected and network-failure responses, retaining entered text after failure. Preview activation is confirmed. Verify actual inbox delivery and the form configuration on the final production domain before launch.
 
 ## Inquiry attribution
 

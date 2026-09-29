@@ -338,10 +338,11 @@ TIKTOK_SHOP_DECISION_TREE: https://www.getworkfriends.co/tiktok-shop/</div>
   });
  });
 })();
-</script><script>// Vercel Web Analytics runs on the production Workfriends domain.
-// Enable Web Analytics in the Vercel project before the production deployment.
+</script><script>// Vercel Web Analytics runs on Workfriends production and project deployments.
+// Use the dashboard environment filter to separate Preview from Production.
 (()=>{
- if(!['www.getworkfriends.co','getworkfriends.co'].includes(location.hostname))return;
+ const host=location.hostname;
+ if(!['www.getworkfriends.co','getworkfriends.co','project-lceix.vercel.app'].includes(host)&&!/^project-lceix-[a-z0-9-]+-workfriends\.vercel\.app$/.test(host))return;
  window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};
  window.va('beforeSend',event=>{
   const url=new URL(event.url);url.search='';url.hash='';

@@ -142,6 +142,8 @@
 })();
 </script><script>(()=>{
  const address='kevin@getworkfriends.co',storageKey='workfriends-inquiry-brief',visitKey='workfriends-visit';
+ // Populate only after Kevin supplies the public booking URL.
+ const bookingUrl='';
  const query=new URLSearchParams(location.search);
  let visit={};try{visit=JSON.parse(sessionStorage.getItem(visitKey)||'{}')||{};}catch{}
  if(!visit.landing_page){
@@ -202,11 +204,24 @@
     const response=await fetch('https://formsubmit.co/ajax/'+address,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data),signal:controller.signal});
     const result=await response.json();if(!response.ok||(result.success!==true&&result.success!=='true'))throw new Error('Submission not confirmed');
     document.dispatchEvent(new CustomEvent('wf-inquiry-submitted',{detail:{page:location.pathname,topic:data.topic||data._subject||'',audience:data.audience||data.company_type||'',hasBrief:!!(data.decision_brief||data.decision_tree_summary||data.audience_decision_brief)}}));
-    inquiry.dataset.sent='true';status.dataset.state='success';status.textContent='Thank you. Your inquiry has been submitted. Kevin can reply using the email address you provided.';submit.textContent='Submitted';
+    inquiry.dataset.sent='true';status.dataset.state='success';status.textContent='Thank you. Your inquiry has been submitted to Workfriends. We’ll be in touch.';submit.textContent='Submitted';
+    if(bookingUrl){try{const destination=new URL(bookingUrl);if(destination.protocol==='https:'){const booking=document.createElement('a');booking.className='text-link';booking.href=destination.href;booking.textContent='Book a conversation with Workfriends →';status.append(document.createElement('br'),booking);}}catch{}}
    }catch{
     status.dataset.state='error';status.textContent='We could not confirm your submission. Your message and answers are still here. You can try again, or write to '+address+'.';submit.disabled=false;submit.textContent=initial;
    }finally{clearTimeout(timer);inquiry.dataset.sending='false';status.scrollIntoView({block:'nearest'});}
   });
  });
+})();
+</script><script>// Vercel Web Analytics runs on the production Workfriends domain.
+// Enable Web Analytics in the Vercel project before the production deployment.
+(()=>{
+ if(!['www.getworkfriends.co','getworkfriends.co'].includes(location.hostname))return;
+ window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};
+ window.va('beforeSend',event=>{
+  const url=new URL(event.url);url.search='';url.hash='';
+  return {...event,url:url.toString()};
+ });
+ const script=document.createElement('script');script.defer=true;
+ script.src='/_vercel/insights/script.js';document.head.append(script);
 })();
 </script></body></html>

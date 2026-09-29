@@ -18,7 +18,7 @@ A static website. No build step, framework, database, account system or API key.
 - `/audience-development/`: an adaptive guided brief for brands, athletes, celebrities, IP owners and live-entertainment opportunities, with public context and a direct inquiry form. Partner selection and tailored advice come from Kevin.
 - `/contact/`: an on-site inquiry form. Contact links open this form in the same tab and carry their topic. A decision brief can follow the visitor into this form, where it is visible and removable.
 - `/experiential/`: media and live-experience strategy, The Bower Collective’s seven-stage scope and related commercial questions.
-- `/market-intelligence/`: 16 concise public answers, eight category perspectives, operator comparison and evidence methodology. Full reports and brand-specific recommendations remain part of a direct Workfriends engagement.
+- `/market-intelligence/`: 16 concise public answers, eight category perspectives and evidence methodology. Full reports and brand-specific recommendations remain part of a direct Workfriends engagement.
 - `/revenue-growth/`: fractional CRO, GTM, outsourced sales and commercial representation.
 - `/creator-commerce/`: brand and agency questions around TikTok Shop, LIVE and the operating ecosystem.
 - `/owned-audiences/`: owned channels, clipping, brand audiences and athlete/celebrity media businesses.
@@ -51,9 +51,13 @@ The existing FormSubmit endpoint is preserved: kevin@getworkfriends.co. A visito
 
 ## Inquiry attribution
 
-Each JavaScript-enhanced submission includes the landing-page path, inquiry-page path, external referrer hostname when supplied by the browser, and any incoming `utm_source`, `utm_medium`, `utm_campaign`, `utm_content` and `utm_term` values. These are held for the browser session and included with the visitor’s deliberate submission. A visitor can also select how they found Workfriends and their role. Referrers are sometimes unavailable; an absent referrer does not prove a direct visit. No analytics vendor or visitor tracking account is configured.
+Each JavaScript-enhanced submission includes the landing-page path, inquiry-page path, external referrer hostname when supplied by the browser, and any incoming `utm_source`, `utm_medium`, `utm_campaign`, `utm_content` and `utm_term` values. These are held for the browser session and included with the visitor’s deliberate submission. A visitor can also select how they found Workfriends, their role and optional timing. Referrers are sometimes unavailable; an absent referrer does not prove a direct visit.
 
-The page emits a `wf-inquiry-submitted` browser event after the form provider reports acceptance. The event includes page, topic, audience and whether a brief was present; it omits the visitor’s name, email and message. This is an integration hook, not an analytics dashboard or proof of inbox delivery. No external event collector has been connected.
+`wf-analytics.js` prepares Vercel page-view tracking for getworkfriends.co and www.getworkfriends.co. Local review and preview domains do not send analytics. Query strings and fragments are removed from page-view events; form details are not sent to Analytics. Enable Web Analytics in the Vercel project and redeploy before verifying collection in its dashboard. Dashboard activation and live analytics collection are not yet confirmed. See https://vercel.com/docs/analytics/quickstart.
+
+The optional `bookingUrl` constant in `wf-contact.js` is empty until Kevin supplies his public scheduling URL. Once configured, the booking link appears only after the inquiry provider accepts the submission. There is no placeholder booking link on the public site.
+
+The page emits a `wf-inquiry-submitted` browser event after the form provider reports acceptance. The event includes page, topic, audience and whether a brief was present; it omits the visitor’s name, email and message. This remains a local integration hook; custom events are not sent to an external collector. Provider acceptance is not proof of inbox delivery.
 
 ## Search and AI discovery
 

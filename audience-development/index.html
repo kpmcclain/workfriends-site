@@ -243,14 +243,31 @@
     updateRequiredContext();status.dataset.state='recovery';status.textContent='Your inquiry is still here. If you did not see a confirmation, you can try again or send it by email.';showRecovery(draft.data);
    }catch{}
   });
-  inquiry.addEventListener('submit',event=>{
+  inquiry.addEventListener('submit',async event=>{
    if(inquiry.dataset.sending==='true'){event.preventDefault();return;}
    if(!inquiry.reportValidity()){event.preventDefault();return;}
    if(inquiry===form&&topic?.value.trim())hidden(provider==='formspree'?'subject':'_subject','Workfriends: '+topic.value.trim());
-   const data=Object.fromEntries(new FormData(inquiry));
+   const body=new FormData(inquiry),data=Object.fromEntries(body);
    try{sessionStorage.setItem(draftKey,JSON.stringify({path:location.pathname,index,savedAt:Date.now(),data}));}catch{}
-   inquiry.dataset.sending='true';submit.disabled=true;submit.textContent='Continuing…';recovery.hidden=true;status.dataset.state='pending';status.textContent='Complete any security check on the next screen to send your inquiry.';
-   // Allow the browser's normal POST. Do not replace it with a cross-origin fetch.
+   const background=provider==='formspree'&&typeof fetch==='function'&&typeof AbortController==='function';
+   if(background)event.preventDefault();
+   inquiry.dataset.sending='true';submit.disabled=true;submit.textContent=background?'Sending…':'Continuing…';recovery.hidden=true;status.dataset.state='pending';status.textContent=background?'Sending your inquiry to Workfriends…':'Complete any security check on the next screen to send your inquiry.';
+   // Browsers without this enhancement retain the normal provider POST.
+   if(!background)return;
+   const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),25000);
+   try{
+    const response=await fetch(inquiry.action,{method:'POST',body,headers:{Accept:'application/json'},signal:controller.signal});
+    const result=await response.json();
+    if(!response.ok||result?.ok!==true)throw new Error('Submission not confirmed');
+    clearTimeout(timeout);
+    try{sessionStorage.removeItem(draftKey);sessionStorage.removeItem(storageKey);}catch{}
+    inquiry.reset();window.workfriendsActiveBrief=null;
+    submit.textContent='Inquiry submitted';status.dataset.state='success';status.textContent='Thank you. Your inquiry has been submitted to Workfriends. We’ll review it and be in touch.';
+    if(/^https?:$/.test(location.protocol))location.assign(new URL('/thanks/',location.href).href);
+   }catch{
+    // Never retry automatically: a lost response may follow an accepted inquiry.
+    inquiry.dataset.sending='false';submit.disabled=false;submit.textContent=initial;status.dataset.state='error';status.textContent='We couldn’t confirm your submission. Your inquiry is still here. Try again or use the email options below.';showRecovery(data);
+   }finally{clearTimeout(timeout);}
   });
  });
 })();

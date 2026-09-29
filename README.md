@@ -2,6 +2,10 @@
 
 A static website. No build step, framework, database, account system or API key.
 
+## Form endpoint configuration
+
+This build uses **formsubmit** at `https://formsubmit.co/kevin@getworkfriends.co`. The authoring source controls this in `wf-form-config.json`; rebuilding updates all three forms together. Formspree must use the exact `/f/` endpoint from the owner's verified account, never an email-address endpoint or a made-up form ID. Its free native flow uses Formspree's hosted confirmation page. A custom native return page is a paid Formspree setting; `_next` must not be sent as though it enables that feature. The `/thanks/` page remains available for a separately configured supported return flow. Keep the default provider spam checks enabled. The migration adapter is prepared, but configuration and actual inbox delivery must be verified before launch. Historical FormSubmit notes below describe the prior implementation.
+
 ## GitHub → Vercel
 
 1. Unzip this folder. Put its **contents** at the root of your website repository: `index.html`, `assets`, `tiktok-shop`, `audience-development`, `experiential`, `contact`, `thanks`, `universe`, `market-intelligence`, the six commercial-page folders, `for-ai.html`, `404.html`, `robots.txt`, `sitemap.xml`, and `vercel.json`. Upload the complete contents together.
@@ -12,9 +16,9 @@ A static website. No build step, framework, database, account system or API key.
 
 ## What is here
 
-- Home: Workfriends positioning around creator-economy revenue, three commercial entry points, the founder story, a named Commercial Sprints offer and both decision briefs. Inter, the single-color headline and The Universe are retained. The homepage starts the animated Universe automatically, with pause controls, reduced-motion support and a still fallback.
+- Home: Workfriends positioning around creator-economy revenue, three commercial entry points, the founder story, a named Commercial Sprints offer and small links to both Decision Trees within the commerce-and-audience door. Kevin’s personal LinkedIn is linked from the founder story and shared footer. Inter, the single-color headline and The Universe are retained. The homepage starts the animated Universe automatically, with pause controls, reduced-motion support and a still fallback.
 - `/universe/`: 167 readable concepts, 19 illustrative pathways and the interactive scene.
-- `/tiktok-shop/`: the existing copy, a guided decision brief and the existing inquiry form. Visitors contact Kevin for advice; the site does not generate a personalized recommendation.
+- `/tiktok-shop/`: the existing copy, a three-question decision brief with a direct skip to the inquiry form, and the existing inquiry form. Visitors contact Kevin for advice; the site does not generate a personalized recommendation.
 - `/audience-development/`: an adaptive guided brief for brands, athletes, celebrities, IP owners and live-entertainment opportunities, with public context and a direct inquiry form. Partner selection and tailored advice come from Kevin.
 - `/contact/`: an on-site inquiry form. Contact links open this form in the same tab and carry their topic. A decision brief can follow the visitor into this form, where it is visible and removable.
 - `/experiential/`: media and live-experience strategy, The Bower Collective’s seven-stage scope and related commercial questions.

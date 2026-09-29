@@ -99,6 +99,7 @@
 .timing-options label:has(input:checked){border-color:var(--green);background:var(--faint)}
 .timing-options label:focus-within{outline:2px solid var(--green);outline-offset:3px}
 @media(max-width:380px){.timing-options{gap:7px}.pov-form .timing-options label{padding:9px 10px;font-size:12px}}
+.form-recovery[hidden]{display:none}.form-recovery{margin-top:1rem}.form-recovery p{font-size:.9rem;margin-bottom:.7rem}.form-recovery-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}.form-recovery-actions .quiet-button{margin:0}
 
 .tree-note{font-size:12px;line-height:1.7;color:var(--muted)}.answer-recap{display:block}.answer-recap summary{cursor:pointer;font-size:13px;font-weight:600}.answer-recap p{font-size:12px;color:var(--muted)}.calculation{display:block}.calculation strong{display:block;font-size:26px}.calculation span{display:block;font-size:12px;color:var(--muted);max-width:800px}.calculation[data-sign=negative] strong{color:#97432c}.reading-date{font-size:11px;color:var(--muted);margin-top:27px}.article-link{font-size:12px;color:var(--green)}.more-questions{border-top:1px solid var(--line);margin-top:25px}.more-questions a{display:block;padding:15px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.5;font-weight:600}.reading-nav .eyebrow{margin-bottom:23px}.foldout-intro{padding:24px 5%;border-top:1px solid var(--line);font-size:13px;line-height:1.7;color:var(--muted)}.subpage .page-heading{padding:70px 0 45px}.subpage .page-heading h1{font-size:clamp(55px,7.5vw,112px);max-width:1200px}.page-heading .lead{max-width:1000px}.reference-content .page-heading h2{font-size:clamp(45px,6vw,88px)}.hero-note{font-size:10px;line-height:1.8;margin-top:24px;color:var(--muted);max-width:960px}.inline-links{display:flex;gap:24px;flex-wrap:wrap;margin-top:27px}.inline-links a{font-size:13px;color:var(--green);font-weight:600}.reference-content>.pov-shell{padding:0}.concept-group summary{list-style:none}.focus-mode #explore{display:none!important}.js .no-js-note{display:none}.no-js-note{font-size:12px;color:var(--muted);line-height:1.7}.source-home #brands h2{max-width:1060px}.reading-nav a:hover{color:var(--green)}.hero .eyebrow{font-size:10px}.footer-tagline{font-size:11px;color:var(--muted)}.dark .principle-note{color:#d5d5d0}[data-theme=ink] .answer-option[aria-pressed=true]{background:#153d32}[data-theme=ink] .primary,[data-theme=ink] .pov-btn{color:#071f1a}[data-theme=ink] .primary:hover,[data-theme=ink] .pov-btn:hover{background:#b0ddc0}.universe-legend .legend-actions{display:flex;gap:22px}.concept-entry [data-concept]{display:none}.js .concept-entry [data-concept]{display:inline-block}
 @media(max-width:600px){.universe-legend .legend-actions{gap:20px}.universe-legend .motion-note{max-width:115px}.subpage .page-heading{padding:45px 0 30px}.subpage .page-heading h1{font-size:55px}.hero .eyebrow{font-size:9px}.reference-content .page-heading h2{font-size:42px}}
@@ -149,10 +150,11 @@
  }
 
  async function copyText(text,control){
-  const old=control.textContent;
-  try{await navigator.clipboard.writeText(text);control.textContent='Copied';}
+  const old=control.textContent;let copied=false;
+  try{await navigator.clipboard.writeText(text);control.textContent='Copied';copied=true;}
   catch{control.textContent='Select and copy the text';}
   setTimeout(()=>{control.textContent=old;},3500);
+  return copied;
  }
  window.workfriendsCopy=copyText;
  document.querySelectorAll('[data-copy-email]').forEach(button=>button.addEventListener('click',()=>copyText(address,button)));
@@ -182,6 +184,20 @@
    const field=document.createElement('input');field.type='hidden';field.name=name;field.value=String(value).slice(0,300);inquiry.append(field);
   }
   const situation=inquiry.querySelector('textarea[name="situation"]'),situationLabel=situation?.labels?.[0],originalLabel=situationLabel?.textContent;
+  const recovery=document.createElement('div');recovery.className='form-recovery';recovery.hidden=true;inquiry.append(recovery);
+  function showRecovery(data){
+   const labels={name:'Name',email:'Email',company:'Company',company_or_project:'Company, talent or project',company_type:'Company type',source:'How I found Workfriends',audience:'My role',topic:'Topic',timing:'Timing',situation:'Situation',decision_brief:'Decision brief',decision_tree_summary:'TikTok Shop decision brief',audience_decision_brief:'Audience development brief'};
+   const parts=Object.entries(data).filter(([name,value])=>!name.startsWith('_')&&String(value).trim()).map(([name,value])=>(labels[name]||inquiry.elements.namedItem(name)?.labels?.[0]?.textContent?.trim()||name.replace(/_/g,' '))+': '+String(value));
+   const fullInquiry=parts.join('\n\n'),subject='Workfriends inquiry'+(data.topic?' — '+String(data.topic).slice(0,120):'');
+   const draft='mailto:'+address+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(fullInquiry);
+   recovery.replaceChildren();
+   const note=document.createElement('p');note.textContent=draft.length<=1800?'You can also send the same inquiry from your email app.':'Copy your full inquiry, then paste it into the email draft.';
+   const actions=document.createElement('div'),copy=document.createElement('button'),email=document.createElement('a'),details=document.createElement('details'),summary=document.createElement('summary'),fullText=document.createElement('textarea');
+   details.className='form-recovery-details';summary.textContent='View full inquiry';fullText.readOnly=true;fullText.rows=6;fullText.setAttribute('aria-label','Full inquiry for email');fullText.value=fullInquiry;details.append(summary,fullText);
+   actions.className='form-recovery-actions';copy.type='button';copy.className='quiet-button';copy.textContent='Copy full inquiry';copy.addEventListener('click',async()=>{if(!await copyText(fullInquiry,copy)){details.open=true;fullText.focus();fullText.select();}});
+   email.className='text-link';email.textContent='Open email draft →';email.href=draft.length<=1800?draft:'mailto:'+address+'?subject='+encodeURIComponent(subject);
+   actions.append(copy,email);recovery.append(note,actions,details);recovery.hidden=false;
+  }
   function updateRequiredContext(){
    const hasBrief=[...inquiry.querySelectorAll('[name="decision_brief"],[name="decision_tree_summary"],[name="audience_decision_brief"]')].some(field=>!field.disabled&&field.value.trim());
    if(situation){situation.required=!hasBrief;if(situationLabel)situationLabel.textContent=originalLabel+(hasBrief?' (optional with your brief)':'');}
@@ -193,16 +209,25 @@
    const data=Object.fromEntries(new FormData(inquiry));
    if(inquiry===form&&topic.value.trim())data._subject='Workfriends — '+topic.value.trim();
    data._captcha='false';data._template='table';
-   const initial=submit.textContent;inquiry.dataset.sending='true';submit.disabled=true;submit.textContent='Sending…';status.dataset.state='pending';status.textContent='Sending your inquiry. Keep this page open for confirmation.';
+   const initial=submit.textContent;inquiry.dataset.sending='true';submit.disabled=true;submit.textContent='Sending…';recovery.hidden=true;status.dataset.state='pending';delete status.dataset.errorCode;status.textContent='Sending your inquiry. Keep this page open for confirmation.';
    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
    try{
     const response=await fetch('https://formsubmit.co/ajax/'+address,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data),signal:controller.signal});
-    const result=await response.json();if(!response.ok||(result.success!==true&&result.success!=='true'))throw new Error('Submission not confirmed');
+    let result;try{result=await response.json();}catch{throw new Error(response.ok?'invalid-response':'http-'+response.status);}
+    if(!response.ok)throw new Error('http-'+response.status);
+    if(result?.success!==true&&result?.success!=='true'){
+     const providerMessage=typeof result?.message==='string'?result.message.replace(/\s+/g,' ').slice(0,220):'';
+     throw Object.assign(new Error(/activat|confirm.*email|verify.*email/i.test(providerMessage)?'activation-required':'provider-rejected'),{providerMessage});
+    }
     document.dispatchEvent(new CustomEvent('wf-inquiry-submitted',{detail:{page:location.pathname,topic:data.topic||data._subject||'',audience:data.audience||data.company_type||'',hasBrief:!!(data.decision_brief||data.decision_tree_summary||data.audience_decision_brief)}}));
     inquiry.dataset.sent='true';status.dataset.state='success';status.textContent='Thank you. Your inquiry has been submitted to Workfriends. We’ll be in touch.';submit.textContent='Submitted';
     if(bookingUrl){try{const destination=new URL(bookingUrl);if(destination.protocol==='https:'){const booking=document.createElement('a');booking.className='text-link';booking.href=destination.href;booking.textContent='Book a conversation with Workfriends →';status.append(document.createElement('br'),booking);}}catch{}}
-   }catch{
-    status.dataset.state='error';status.textContent='We could not confirm your submission. Your message and answers are still here. You can try again, or write to '+address+'.';submit.disabled=false;submit.textContent=initial;
+   }catch(error){
+    const code=error.name==='AbortError'?'timeout':error instanceof TypeError?'connection':/^(http-\d{3}|invalid-response|activation-required|provider-rejected)$/.test(error.message)?error.message:'unconfirmed';
+    const messages={timeout:'The form service took too long to respond, so we cannot confirm your submission.',connection:'We could not connect to the form service, so we cannot confirm your submission.','activation-required':'The form service says email delivery still needs activation.','provider-rejected':'The form service did not accept your inquiry.','invalid-response':'The form service returned an unexpected response, so we cannot confirm your submission.','http-403':'The form service blocked this submission.','http-429':'The form service is temporarily limiting submissions.'};
+    status.dataset.state='error';status.dataset.errorCode=code;status.textContent=(messages[code]||(/^http-5/.test(code)?'The form service is temporarily unavailable.':'We could not confirm your submission.'))+' Your message and answers are still here.';
+    if(code==='provider-rejected'&&error.providerMessage)status.append(document.createTextNode(' The service says: '+error.providerMessage));
+    console.warn('Workfriends inquiry not confirmed:',code);showRecovery(data);submit.disabled=false;submit.textContent=initial;
    }finally{clearTimeout(timer);inquiry.dataset.sending='false';status.scrollIntoView({block:'nearest'});}
   });
  });

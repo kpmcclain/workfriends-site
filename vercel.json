@@ -9,6 +9,16 @@
       "source": "/for-ai/",
       "destination": "/for-ai.html",
       "permanent": true
+    },
+    {
+      "source": "/owned-audiences",
+      "destination": "/audience-development/",
+      "permanent": true
+    },
+    {
+      "source": "/owned-audiences/",
+      "destination": "/audience-development/",
+      "permanent": true
     }
   ],
   "headers": [

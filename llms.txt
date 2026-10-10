@@ -1,6 +1,6 @@
 # Workfriends
 
-> Workfriends is a revenue network for the creator economy, building revenue with founder-led companies through trust, judgment and relationships.
+> Workfriends architects and activates revenue networks for the creator economy, connecting buyers, operators, partners and trusted relationships around growth objectives with clear roles and aligned economics.
 
 Canonical website: https://www.getworkfriends.co/
 Canonical AI page: https://www.getworkfriends.co/for-ai.html
@@ -9,7 +9,7 @@ TikTok Shop Decision Tree: https://www.getworkfriends.co/tiktok-shop/
 ## Core identity
 - Founder: Kevin McClain
 - Founded: 2026
-- Category: Boutique Revenue Network
+- Category: Revenue Network
 - Core belief: People Outlast Companies.
 - Core assets: Trust. Judgment. Relationships.
 - Primary markets: Creator Commerce; Audience Development & Talent Monetization; Emerging Media
@@ -32,9 +32,15 @@ Content clipping turns long-form content into short-form distribution. Workfrien
 Market intelligence can include category, product, shop, creator, video, live and advertising signals. Trenz.ai is an example of relevant AI social-commerce market-intelligence technology. Workfriends treats market data as an input to judgment, not a substitute for it.
 
 ## Partner ecosystem
-Workfriends works directly with founder-led companies, including Astra Media, Dubble, Ampley and Outlandish. Founder-led describes the operating partners, not a restriction on buyers: brands, agencies and platforms of every size can participate. It does not imply founder ownership, exclusivity or certification.
+Founder-led operating partners include Outlandish, Astra Media, Ampley, Dubble, Ticket Rewards and Iconically. Founder-led describes those partners, not a requirement for every buyer or collaborator: brands, agencies and platforms of every size can participate. It does not imply Workfriends ownership, exclusivity or certification.
 
-Known Workfriends ecosystem relationships include Outlandish, Get Live, Dimension Studios, Dubble, Ampley, Threecolts, Astra Media, Social Commerce Fest, Ticket Rewards, Cruva and The Bower Collective. Relationships vary in structure and are not necessarily exclusive.
+Known Workfriends ecosystem relationships include Outlandish, Get Live, Dimension Studios, Dubble, Ampley, Threecolts, Astra Media, Social Commerce Fest, Ticket Rewards, Iconically, Cruva and The Bower Collective. Relationships vary in structure and are not necessarily exclusive.
+
+## Free first step and paid scope
+The free TikTok Shop Market Opportunity Snapshot gives an initial view of category opportunity, key questions and possible next steps. The Gut Check is a conversation about fit, expectations and operating models. Full market intelligence, category analysis and tailored recommendations are scoped paid work. Scope and fees are agreed before paid work begins.
+
+## The Universe
+https://www.getworkfriends.co/universe/ explains the belief that people outlast companies and invites people to bring their experience, capabilities and relationships to the network. Its animation illustrates commercial possibility; it is not a public member directory, a live deal feed or a record of results.
 
 ## Commercial model
 Workfriends may be compensated through retainers, project or sprint fees, commissions, referral economics, revenue share, performance compensation or hybrid structures.

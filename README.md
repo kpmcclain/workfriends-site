@@ -17,7 +17,7 @@ This build uses **formspree** at `https://formspree.io/f/mvkglbdw`. The authorin
 ## What is here
 
 - Home: Workfriends positioning around creator-economy revenue, three commercial entry points, the founder story, a named Commercial Sprints offer and small links to both Decision Trees within the commerce-and-audience door. Kevin’s personal LinkedIn is linked from the founder story and shared footer. Inter, the single-color headline and The Universe are retained. The homepage starts the animated Universe automatically, with pause controls, reduced-motion support and a still fallback.
-- `/universe/`: 167 readable concepts, 19 illustrative pathways and the interactive scene.
+- `/universe/`: the belief that people outlast companies, a concise explanation of the network, an invitation to participate and the interactive scene. The former visible concept catalogue and repeated pathways have been retired; the scene retains its concept and pathway data.
 - `/tiktok-shop/`: the existing copy, a three-question decision brief with a direct skip to the inquiry form, and the existing inquiry form. Visitors contact Kevin for advice; the site does not generate a personalized recommendation.
 - `/audience-development/`: an adaptive guided brief for brands, athletes, celebrities, IP owners and live-entertainment opportunities, with public context and a direct inquiry form. Partner selection and tailored advice come from Kevin.
 - `/contact/`: an on-site inquiry form. Contact links open this form in the same tab and carry their topic. A decision brief can follow the visitor into this form, where it is visible and removable.
@@ -43,7 +43,7 @@ After publication, submit the updated sitemap in Google Search Console and verif
 
 ## Editing
 
-Edit the text directly in the relevant HTML file. The scene reads concepts from `#scene-concepts` and the 19 relationships from `#path-data`. The dedicated Universe page also renders every concept as ordinary HTML in `#concept-data`. Scene settings are near `const CONFIG`. The CSS variables at the start of each page control paper, ink and green. The review file contains all content in expandable sections. Keep published pages consistent if you change a shared statement.
+Edit the text directly in the relevant HTML file. The scene reads concepts from `#scene-concepts` and the 19 relationships from `#path-data`. The dedicated Universe page keeps its belief and participation copy in ordinary HTML; it no longer renders the former full concept catalogue. Scene settings are near `const CONFIG`. The CSS variables at the start of each page control paper, ink and green. The review file contains all content in expandable sections. Keep published pages consistent if you change a shared statement.
 
 ## The visual metaphor
 
@@ -84,6 +84,8 @@ The public Market Intelligence page presents original Workfriends principles and
 The scene uses pinned Three.js 0.180.0. Inter is embedded. The production folder needs no third-party runtime request for typography or WebGL. Browser checks cover interaction, semantic content, mobile layout, reduced motion, a failed WebGL load and decision branches. Software-rendered browser testing is not a real-device performance benchmark. Check the animation on your usual phone and laptop before changing node counts or pixel ratio.
 
 For a local server: `python3 -m http.server 8000` from this folder, then open http://localhost:8000.
+
+Run `python3 tests/validate_public_content.py` for static checks of structured data, visible FAQ answers, the free/paid scope, partner references, the simplified Universe description and the thank-you page’s indexing exclusion. These checks do not replace browser or real-device review.
 
 ## Licenses
 

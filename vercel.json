@@ -1,6 +1,16 @@
 {
   "redirects": [
     {
+      "source": "/commercial-sprints",
+      "destination": "/revenue-channels/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-sprints/",
+      "destination": "/revenue-channels/",
+      "permanent": true
+    },
+    {
       "source": "/for-ai",
       "destination": "/for-ai.html",
       "permanent": true

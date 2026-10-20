@@ -1,0 +1,38 @@
+name: Restore Universe in preview
+on:
+  push:
+    branches: [workfriends-copy-review-20261020]
+    paths:
+      - tools/restore_home_universe.py
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: workfriends-copy-review-20261020
+          fetch-depth: 0
+      - run: pip install beautifulsoup4
+      - name: Restore original Universe in current homepage
+        run: python3 tools/restore_home_universe.py
+      - name: Confirm preserved current copy and Universe code
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('index.html').read_text()
+          for x in ['id="scene-panel"','id="network"','Senior commercial leadership, without the hire.','Win new brand business, or build the partner channel','Build your next','The right relationships']:
+              if x=='The right relationships': continue
+              assert x in s,x
+          assert 'All upside. No overhead.' not in s
+          print('Universe and copy verified')
+          PY
+      - name: Commit isolated preview homepage
+        run: |
+          git config user.name "Workfriends preview"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --check
+          git commit -m "Restore original animated Universe background while preserving commercial copy"
+          git push origin HEAD:workfriends-copy-review-20261020

@@ -16,12 +16,12 @@ This build uses **formspree** at `https://formspree.io/f/mvkglbdw`. The authorin
 
 ## What is here
 
-- Home: Workfriends positioning around creator-economy revenue, three commercial entry points, the founder story, a named Commercial Sprints offer and small links to both Decision Trees within the commerce-and-audience door. Kevin’s personal LinkedIn is linked from the founder story and shared footer. Inter, the single-color headline and The Universe are retained. The homepage starts the animated Universe automatically, with pause controls, reduced-motion support and a still fallback.
+- Home: Workfriends positioning around creator-economy revenue, three commercial entry points, the founder story, a named Revenue Builds offer and small links to both Decision Trees within the commerce-and-audience door. Kevin’s personal LinkedIn is linked from the founder story and shared footer. Inter, the single-color headline and The Universe are retained. The homepage starts the animated Universe automatically, with pause controls, reduced-motion support and a still fallback.
 - `/universe/`: the belief that people outlast companies, a concise explanation of the network, an invitation to participate and the interactive scene. The former visible concept catalogue and repeated pathways have been retired; the scene retains its concept and pathway data.
 - `/tiktok-shop/`: the existing copy, a three-question decision brief with a direct skip to the inquiry form, and the existing inquiry form. Visitors contact Kevin for advice; the site does not generate a personalized recommendation.
 - `/audience-development/`: an adaptive guided brief for brands, athletes, celebrities, IP owners and live-entertainment opportunities, with public context and a direct inquiry form. Partner selection and tailored advice come from Kevin.
 - `/contact/`: an on-site inquiry form. Contact links open this form in the same tab and carry their topic. A decision brief can follow the visitor into this form, where it is visible and removable.
-- `/experiential/`: media and live-experience strategy, The Bower Collective’s seven-stage scope and related commercial questions.
+- `/experiential/`: media and live-experience strategy, Live-experience strategy’s seven-stage scope and related commercial questions.
 - `/market-intelligence/`: 16 concise public answers, eight category perspectives and evidence methodology. Full reports and brand-specific recommendations remain part of a direct Workfriends engagement.
 - `/revenue-growth/`: fractional CRO, GTM, outsourced sales and commercial representation.
 - `/creator-commerce/`: brand and agency questions around TikTok Shop, LIVE and the operating ecosystem.
@@ -90,3 +90,9 @@ Run `python3 tests/validate_public_content.py` for static checks of structured d
 ## Licenses
 
 Three.js is MIT licensed. Inter is SIL Open Font License 1.1. See `assets/THREE-LICENSE.txt` and `assets/INTER-OFL.txt`.
+
+
+
+
+## Public launch policy
+The homepage is offer-first; the Universe is a separate destination. Primary CTA: Discuss a revenue opportunity. Secondary CTA: How Revenue Builds work. Public pages show operating capabilities, not a named partner roster. Named partners and partner metrics require explicit publication approval. Career credibility uses 19 years and actual employers, not an acquisition-dollar aggregate. Review content and preview generators are excluded from production.

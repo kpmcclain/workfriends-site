@@ -1,0 +1,12 @@
+/* Approved offer-first launch. Universe stays on /universe/. */
+.wf-launch-hero{background:var(--paper);color:var(--ink);padding:64px 0 52px;border-bottom:1px solid var(--line)}
+.wf-launch-hero h1{font-size:clamp(52px,6.8vw,98px);line-height:1.02;letter-spacing:-.045em;max-width:1150px;margin:22px 0 24px}
+.wf-launch-audience{font-size:19px;line-height:1.5;font-weight:650;color:var(--green);margin:0 0 14px}
+.wf-launch-copy{font-size:19px;line-height:1.6;max-width:770px;color:var(--muted);margin:0 0 26px}
+.wf-launch-actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap}.wf-launch-actions .text-link{font-size:13px}
+.wf-launch-fee{font-size:12px;line-height:1.6;color:var(--muted);margin:20px 0 0}
+.home-focus #what-we-do{border-top:0;padding-top:42px}.home-focus .founder-credit{line-height:1.8}
+.path-nav{gap:20px}.path-nav .nav-cta{font-size:11px;white-space:normal;text-align:center;line-height:1.4;max-width:220px}
+.footer-nav a{max-width:250px;line-height:1.5}
+@media(max-width:900px){.path-nav .nav-cta{max-width:none;font-size:14px}}
+@media(max-width:600px){.wf-launch-hero{padding:35px 0 34px}.wf-launch-hero h1{font-size:clamp(39px,10.2vw,60px);line-height:1.04;margin:20px 0}.wf-launch-audience{font-size:15px}.wf-launch-copy{font-size:16px;line-height:1.65}.wf-launch-actions{align-items:flex-start;flex-direction:column;gap:19px}.wf-launch-actions .primary{font-size:12px}.wf-launch-fee{font-size:11px}.home-focus #what-we-do{padding-top:30px}}

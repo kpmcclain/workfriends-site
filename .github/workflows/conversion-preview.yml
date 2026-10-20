@@ -27,6 +27,11 @@ jobs:
         run: |
           if [ -f tools/build_conversion_preview.py ] && [ -f tools/conversion_preview_content.json ]; then
             python3 tools/build_conversion_preview.py
+            python3 - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          p.write_text(p.read_text().replace('href="#universe-guide" id="read-universe"', 'href="/universe/" id="read-universe"'))
+          PY
             python3 tests/validate_public_content.py
             git config user.name "Workfriends preview builder"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -44,6 +49,12 @@ jobs:
             python3 -m playwright install --with-deps chromium
             python3 tests/site_preview_browser.py
           fi
+      - name: Record public preview response without bypassing protection
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p preview-checks
+          curl --head --silent --show-error --max-time 20 'https://project-lceix-git-workfriends-conversion-pre-92b419-workfriends.vercel.app/review/' > preview-checks/deployment-headers.txt || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:

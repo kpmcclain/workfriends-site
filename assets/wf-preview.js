@@ -1,0 +1,1 @@
+(()=>{const h=location.hostname;if(h==='www.getworkfriends.co'||h==='getworkfriends.co')return;document.documentElement.dataset.wfPreview='true';const a=document.createElement('a');a.className='wf-review-badge';a.href='/review/';a.textContent='Review preview · Live site unchanged';a.setAttribute('aria-label','Open preview change summary');document.body.append(a);})();

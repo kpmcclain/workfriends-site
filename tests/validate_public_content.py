@@ -86,16 +86,35 @@ class PublicContentTests(unittest.TestCase):
                                 self.assertIn(normalized(question["name"]), page.visible)
                                 self.assertIn(normalized(question["acceptedAnswer"]["text"]), page.visible)
 
-    def test_free_snapshot_and_paid_scope_are_distinct(self):
-        for path in ("tiktok-shop/index.html", "creator-commerce/index.html", "for-ai.html"):
+    def test_free_fit_call_and_paid_scope_are_distinct(self):
+        for path in ("creator-commerce/index.html", "for-ai.html"):
             text = Page(path).visible
             with self.subTest(path=path):
-                self.assertIn("Market Opportunity Snapshot", text)
-                self.assertIn("Gut Check", text)
-                self.assertIn("initial view of category opportunity, key questions and possible next steps", text)
-                self.assertNotIn("exact category gap", text)
-        self.assertIn("agreed scope and fee before work begins", Page("tiktok-shop/index.html").visible)
-        self.assertIn("scoped paid work", Page("creator-commerce/index.html").visible)
+                self.assertIn("free fit call", text)
+                self.assertIn("scoped paid work", text)
+                self.assertNotIn("free Market Opportunity Snapshot", text)
+        tiktok = Page("tiktok-shop/index.html").visible
+        self.assertIn("agreed scope and fee before work begins", tiktok)
+        self.assertNotIn("free Market Opportunity Snapshot", tiktok)
+        self.assertIn("scoped separately as paid work", Page("contact/index.html").visible)
+
+    def test_conversion_scope_preserves_brands_and_paid_engagement(self):
+        home = Page("index.html").visible
+        self.assertIn("The right partnerships", home)
+        self.assertIn("build bigger businesses.", home)
+        self.assertIn("brands, agencies, platforms and IP owners", home)
+        for path in ("index.html", "revenue-channels/index.html", "agency-channel-build/index.html"):
+            self.assertIn("Revenue Build", Page(path).visible)
+        channels = Page("revenue-channels/index.html").visible
+        self.assertIn("Can a brand hire Workfriends directly?", channels)
+        agency = Page("agency-channel-build/index.html").visible
+        self.assertIn("Illustrative build. Not a client case study", agency)
+        self.assertIn("Direct brand work does not require an agency-channel build", agency)
+        self.assertIn("/agency-channel-build/", (ROOT / "sitemap.xml").read_text())
+        self.assertNotIn("/review/", (ROOT / "sitemap.xml").read_text())
+        self.assertNotIn("sprint fees", (ROOT / "llms.txt").read_text())
+        for name in ("Rebekah", "Reacher", "OuterSignal", "Recom", "Levanta", "Dial-Up"):
+            self.assertNotIn(name, agency)
 
     def test_partner_references_preserve_approved_operating_partners(self):
         partners = ("Outlandish", "Astra Media", "Ampley", "Dubble", "Ticket Rewards", "Iconically")

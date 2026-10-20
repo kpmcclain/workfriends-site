@@ -90,3 +90,11 @@ Run `python3 tests/validate_public_content.py` for static checks of structured d
 ## Licenses
 
 Three.js is MIT licensed. Inter is SIL Open Font License 1.1. See `assets/THREE-LICENSE.txt` and `assets/INTER-OFL.txt`.
+
+
+## Conversion preview, 2026-10-19
+Branch: `workfriends-conversion-preview-20261019`. Review only; do not merge or promote without Kevin's approval.
+
+Updated Home, Partnerships & Channels, Creator Commerce, Audience Development, Contact and the public business reference. Added one Agency Channel Build page, shared conversion styles, and a preview-only review hub. Existing Universe, typography, verified form endpoint/behavior and approved partner descriptions are preserved. No public price, named new team commitment, prospect identity or client result was added.
+
+The preview badge is disabled on the two production Workfriends hostnames. Before publication remove the preview-only review hub, badge script references and branch build workflow. Keep the production canonicals and confirm preview noindex behavior at the deployment layer. Run static content and browser tests, then do one authorized delivered-inquiry smoke test after launch. Local intercepted tests do not establish inbox delivery.

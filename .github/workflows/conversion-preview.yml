@@ -30,7 +30,10 @@ jobs:
             python3 - <<'PY'
           from pathlib import Path
           p = Path('index.html')
-          p.write_text(p.read_text().replace('href="#universe-guide" id="read-universe"', 'href="/universe/" id="read-universe"'))
+          text = p.read_text()
+          text = text.replace('href="#universe-guide"', 'href="/universe/"')
+          assert 'href="#universe-guide"' not in text
+          p.write_text(text)
           PY
             python3 tests/validate_public_content.py
             git config user.name "Workfriends preview builder"

@@ -187,6 +187,22 @@ for p in sorted(ROOT.rglob('*.html')):
                     ans=visible_answer(q.get('name',''))
                     if ans:q['acceptedAnswer']['text']=ans
         script.string=json.dumps(doc,ensure_ascii=False,separators=(',',':'))
+    if rel=='index.html':
+        # Homepage Universe's original inline controller also owned the mobile menu.
+        # Restore the standalone progressive navigation after removing the Universe.
+        mobile_menu = '''document.documentElement.classList.add('js');
+(()=>{const nav=document.getElementById('main-nav'),toggle=document.querySelector('.nav-toggle');
+if(!nav||!toggle)return;const dropdown=nav.querySelector('details');toggle.hidden=false;
+const close=()=>{nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');if(dropdown)dropdown.open=false;};
+toggle.addEventListener('click',()=>{const open=!nav.classList.contains('is-open');nav.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));if(!open&&dropdown)dropdown.open=false;});
+document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!toggle.contains(e.target))close();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&(dropdown?.open||nav.classList.contains('is-open'))){const target=matchMedia('(max-width:900px)').matches?toggle:dropdown.querySelector('summary');close();target?.focus();}});
+nav.addEventListener('click',e=>{if(e.target.closest('a'))close();});
+nav.addEventListener('focusout',()=>{setTimeout(()=>{if(!nav.contains(document.activeElement)&&document.activeElement!==toggle)close();},0);});
+matchMedia('(max-width:900px)').addEventListener('change',close);})();'''
+        script=soup.new_tag('script')
+        script.string=mobile_menu
+        soup.body.append(script)
     out=str(soup)
     p.write_text(out)
     if out!=original:changed.append(rel)

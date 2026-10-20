@@ -1,14 +1,44 @@
 {
   "redirects": [
     {
-      "source": "/commercial-sprints",
+      "source": "/agency-partners/",
       "destination": "/revenue-channels/",
-      "permanent": true
+      "statusCode": 301
+    },
+    {
+      "source": "/agency-partners",
+      "destination": "/revenue-channels/",
+      "statusCode": 301
+    },
+    {
+      "source": "/partnerships/",
+      "destination": "/revenue-channels/",
+      "statusCode": 301
+    },
+    {
+      "source": "/partnerships",
+      "destination": "/revenue-channels/",
+      "statusCode": 301
+    },
+    {
+      "source": "/revenue-growth/",
+      "destination": "/revenue-channels/",
+      "statusCode": 301
+    },
+    {
+      "source": "/revenue-growth",
+      "destination": "/revenue-channels/",
+      "statusCode": 301
     },
     {
       "source": "/commercial-sprints/",
       "destination": "/revenue-channels/",
-      "permanent": true
+      "statusCode": 301
+    },
+    {
+      "source": "/commercial-sprints",
+      "destination": "/revenue-channels/",
+      "statusCode": 301
     },
     {
       "source": "/for-ai",

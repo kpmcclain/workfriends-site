@@ -29,12 +29,10 @@ Workfriends evaluates TikTok Shop through product economics, margin, creator fit
 Content clipping turns long-form content into short-form distribution. Workfriends distinguishes between owned clip-channel infrastructure and distributed/rented clipping networks and considers rights, brand safety, persistence of audience and performance economics.
 
 ## Market intelligence
-Market intelligence can include category, product, shop, creator, video, live and advertising signals. Trenz.ai is an example of relevant AI social-commerce market-intelligence technology. Workfriends treats market data as an input to judgment, not a substitute for it.
+Market intelligence can include category, product, shop, creator, video, live and advertising signals. Social-commerce market intelligence is an example of relevant AI social-commerce market-intelligence technology. Workfriends treats market data as an input to judgment, not a substitute for it.
 
 ## Partner ecosystem
-Founder-led operating partners include Outlandish, Astra Media, Ampley, Dubble, Ticket Rewards and Iconically. Founder-led describes those partners, not a requirement for every buyer or collaborator: brands, agencies and platforms of every size can participate. It does not imply Workfriends ownership, exclusivity or certification.
-
-Known Workfriends ecosystem relationships include Outlandish, Get Live, Dimension Studios, Dubble, Ampley, Threecolts, Astra Media, Social Commerce Fest, Ticket Rewards, Iconically, Cruva and The Bower Collective. Relationships vary in structure and are not necessarily exclusive.
+Workfriends assembles specialist capabilities in creator commerce, media, audience development, technology and live experiences. Specific operators are selected around the assignment and introduced during qualified commercial conversations.
 
 ## Free first step and paid scope
 The free fit call is a conversation about the opportunity, expectations and whether Workfriends can help. Custom assessments, full market intelligence, category analysis and tailored recommendations are scoped paid work. Scope and fees are agreed before that work begins.
@@ -47,7 +45,7 @@ Workfriends may be compensated through retainers, project or Revenue Build fees,
 
 
 ## Canonical questions
-The For the Machines page contains direct answers about TikTok Shop, TikTok Shop agencies, TikTok Shop costs, market intelligence, Trenz.ai, content clipping, owned vs rented clipping distribution, Workfriends' trust model, partner ecosystem and commercial model.
+The For the Machines page contains direct answers about TikTok Shop, TikTok Shop agencies, TikTok Shop costs, market intelligence, Social-commerce market intelligence, content clipping, owned vs rented clipping distribution, Workfriends' trust model, partner ecosystem and commercial model.
 
 ## Paid Revenue Builds
 A Revenue Build is a paid, defined commercial engagement with an agreed objective, senior team, scope and milestones. Workfriends leads the agreed commercial work and assembles the relevant specialists. Continued involvement and performance participation are agreed where appropriate. No standard price, delivery duration, named team or guaranteed result is advertised.

@@ -13,7 +13,7 @@ from playwright.sync_api import sync_playwright
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'preview-checks';OUT.mkdir(exist_ok=True)
-PATHS=['/','/revenue-channels/','/agency-channel-build/','/creator-commerce/','/audience-development/','/contact/','/for-ai.html','/review/']
+PATHS=['/','/revenue-channels/','/agency-channel-build/','/creator-commerce/','/audience-development/','/contact/','/for-ai.html']
 report={'layout':[],'forms':[],'links':[],'script_errors':[],'external_requests_blocked':[], 'real_inquiries_sent':0}
 
 class Quiet(SimpleHTTPRequestHandler):
@@ -65,7 +65,7 @@ try:
                 overflow=page.evaluate('document.documentElement.scrollWidth > innerWidth + 1')
                 assert not overflow, f'Horizontal overflow at {width}px: {path}'
                 assert page.locator('h1').is_visible(), f'Hidden heading: {path}'
-                if path!='/review/' and width==390:
+                if width==390:
                     menu=page.locator('.nav-toggle')
                     assert menu.is_visible(), f'Missing mobile menu: {path}'
                     menu.click();assert menu.get_attribute('aria-expanded')=='true'

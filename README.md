@@ -43,11 +43,15 @@ After publication, submit the updated sitemap in Google Search Console and verif
 
 ## Editing
 
-Edit the text directly in the relevant HTML file. The scene reads concepts from `#scene-concepts` and the 19 relationships from `#path-data`. The dedicated Universe page keeps its belief and participation copy in ordinary HTML; it no longer renders the former full concept catalogue. Scene settings are near `const CONFIG`. The CSS variables at the start of each page control paper, ink and green. The review file contains all content in expandable sections. Keep published pages consistent if you change a shared statement.
+Edit the text directly in the relevant HTML file. The scene reads concepts from `#scene-concepts` and the 48 relationships from `#path-data`. The dedicated Universe page keeps its belief and participation copy in ordinary HTML; it no longer renders the former full concept catalogue. Scene settings are near `const CONFIG`. The CSS variables at the start of each page control paper, ink and green. The review file contains all content in expandable sections. Keep published pages consistent if you change a shared statement.
+
+For a monthly Universe refresh, first prepare a reviewed, publication-safe JSON file with `concepts` and `paths` arrays using the existing schemas. Use capability abstractions, not private meeting notes, partner claims, client names or commercial terms. Each new pathway must reference four exact concept names; each new concept must connect to a pathway. Keep the simplified page design and existing entries intact.
+
+Run `python3 tools/update_universe.py reviewed-additions.json` to preview the counts, then add `--apply` to update both scenes and the documented counts locally. Identical entries are skipped on repeat runs; conflicting names, invalid references, disconnected additions and mobile-capacity overflow stop the update. Run `python3 tests/validate_universe.py` and `python3 tests/validate_public_content.py`, then review desktop/mobile interactions in a nonproduction preview. This command does not schedule research, approve public claims, push, merge or deploy. Publication remains a separate approval step.
 
 ## The visual metaphor
 
-500 spheres on desktop / 300 on mobile. 167 have public concept labels; a limited set is visible at any moment. Most nodes are disconnected. Selected encounters bring two distinct nodes together, grow both, and activate a secondary pathway. Growth symbolizes commercial possibility, not a live metric, member directory or valuation. The homepage starts the scene automatically. Motion pauses offscreen and respects reduced-motion preferences. A static vector field and all ordinary page content remain if WebGL fails.
+500 spheres on desktop / 300 on mobile. 211 have public concept labels; a limited set is visible at any moment. Most nodes are disconnected. Selected encounters bring two distinct nodes together, grow both, and activate a secondary pathway. Growth symbolizes commercial possibility, not a live metric, member directory or valuation. The homepage starts the scene automatically. Motion pauses offscreen and respects reduced-motion preferences. A static vector field and all ordinary page content remain if WebGL fails.
 
 ## Inquiry form
 

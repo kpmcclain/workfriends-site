@@ -43,7 +43,7 @@ After publication, submit the updated sitemap in Google Search Console and verif
 
 ## Editing
 
-Edit the text directly in the relevant HTML file. The scene reads concepts from `#scene-concepts` and the 48 relationships from `#path-data`. The dedicated Universe page keeps its belief and participation copy in ordinary HTML; it no longer renders the former full concept catalogue. Scene settings are near `const CONFIG`. The CSS variables at the start of each page control paper, ink and green. The review file contains all content in expandable sections. Keep published pages consistent if you change a shared statement.
+Edit the text directly in the relevant HTML file. The scene reads concepts from `#scene-concepts` and the 55 relationships from `#path-data`. The dedicated Universe page keeps its belief and participation copy in ordinary HTML; it no longer renders the former full concept catalogue. Scene settings are near `const CONFIG`. The CSS variables at the start of each page control paper, ink and green. The review file contains all content in expandable sections. Keep published pages consistent if you change a shared statement.
 
 For a monthly Universe refresh, first prepare a reviewed, publication-safe JSON file with `concepts` and `paths` arrays using the existing schemas. Use capability abstractions, not private meeting notes, partner claims, client names or commercial terms. Each new pathway must reference four exact concept names; each new concept must connect to a pathway. Keep the simplified page design and existing entries intact.
 
@@ -51,7 +51,7 @@ Run `python3 tools/update_universe.py reviewed-additions.json` to preview the co
 
 ## The visual metaphor
 
-500 spheres on desktop / 300 on mobile. 211 have public concept labels; a limited set is visible at any moment. Most nodes are disconnected. Selected encounters bring two distinct nodes together, grow both, and activate a secondary pathway. Growth symbolizes commercial possibility, not a live metric, member directory or valuation. The homepage starts the scene automatically. Motion pauses offscreen and respects reduced-motion preferences. A static vector field and all ordinary page content remain if WebGL fails.
+500 spheres on desktop / 300 on mobile. 219 have public concept labels; a limited set is visible at any moment. Most nodes are disconnected. Selected encounters bring two distinct nodes together, grow both, and activate a secondary pathway. Growth symbolizes commercial possibility, not a live metric, member directory or valuation. The homepage starts the scene automatically. Motion pauses offscreen and respects reduced-motion preferences. A static vector field and all ordinary page content remain if WebGL fails.
 
 ## Inquiry form
 

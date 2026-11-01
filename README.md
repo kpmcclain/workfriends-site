@@ -22,7 +22,7 @@ This build uses **formspree** at `https://formspree.io/f/mvkglbdw`. The authorin
 - `/audience-development/`: an adaptive guided brief for brands, athletes, celebrities, IP owners and live-entertainment opportunities, with public context and a direct inquiry form. Partner selection and tailored advice come from Kevin.
 - `/contact/`: an on-site inquiry form. Contact links open this form in the same tab and carry their topic. A decision brief can follow the visitor into this form, where it is visible and removable.
 - `/experiential/`: media and live-experience strategy, Live-experience strategy’s seven-stage scope and related commercial questions.
-- `/market-intelligence/`: 16 concise public answers, eight category perspectives, evidence methodology and a discreet investor/strategic-buyer market-intelligence inquiry. Full reports and brand-specific recommendations remain part of a direct Workfriends engagement.
+- `/market-intelligence/`: focused investor-facing introduction for venture capital, private equity and strategic buyers, with one hero link to the Universe and a stable `#investors-strategic-buyers` anchor. The duplicated lower investor callout was removed; the existing 16 public research answers remain. No new navigation item or Workfriends fundraising solicitation. Full custom reports and commercial intelligence engagements are scoped separately.
 - `/revenue-growth/`: fractional CRO, GTM, outsourced sales and commercial representation.
 - `/creator-commerce/`: brand and agency questions around TikTok Shop, LIVE and the operating ecosystem.
 - `/owned-audiences/`: owned channels, clipping, brand audiences and athlete/celebrity media businesses.

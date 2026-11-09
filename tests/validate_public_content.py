@@ -100,8 +100,12 @@ class PublicContentTests(unittest.TestCase):
 
     def test_conversion_scope_preserves_brands_and_paid_engagement(self):
         home = Page("index.html").visible
-        self.assertIn("Build your next", home)
-        self.assertIn("revenue channel.", home)
+        self.assertIn("Relationships into", home)
+        self.assertIn("commercial advantage.", home)
+        self.assertIn("Access", home)
+        self.assertIn("Distribution", home)
+        self.assertIn("Commercial leverage", home)
+        self.assertIn("Qualified opportunities", home)
         self.assertIn("brands, agencies, platforms and IP owners", home)
         for path in ("index.html", "revenue-channels/index.html", "agency-channel-build/index.html"):
             self.assertIn("Revenue Build", Page(path).visible)

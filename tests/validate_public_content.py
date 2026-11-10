@@ -105,7 +105,7 @@ class PublicContentTests(unittest.TestCase):
         self.assertIn("New revenue.", home)
         self.assertIn("Revenue Network for the Creator Economy", home)
         self.assertIn("Relationships that do more than open doors.", home)
-        self.assertIn("brands, agencies, platforms and IP owners", home)
+        self.assertIn("emerging media, commerce, marketing and technology", home)
         for path in ("index.html", "revenue-channels/index.html", "agency-channel-build/index.html"):
             self.assertIn("Revenue Build", Page(path).visible)
         channels = Page("revenue-channels/index.html").visible
